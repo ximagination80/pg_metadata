@@ -1,16 +1,12 @@
 package test
 
-import java.io.File
-
 import comparator._
-import core.{AppSettings, PGMetadataCollector, TableDTO}
+import core.{AppSettings, PGMetadataCollector}
 import net.liftweb.json.DefaultFormats
 import net.liftweb.json.Extraction._
 import net.liftweb.json.JsonAST._
 import org.flywaydb.core.Flyway
-import org.scalatest.{BeforeAndAfterAll, FunSuite, Matchers}
-
-import scala.util.{Failure, Success, Try}
+import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 class SchemaCheck extends FunSuite
       with PGConnectionUtils
@@ -18,6 +14,7 @@ class SchemaCheck extends FunSuite
       with Comparison {
 
   implicit val settings = AppSettings(debug = false)
+  implicit val formats = DefaultFormats
 
   val pg_schema = Seq("driver")
 
@@ -35,29 +32,22 @@ class SchemaCheck extends FunSuite
   pg_schema.foreach { e =>
     test("[" + e.capitalize + "] schema test") {
       connect(e, { implicit c =>
-        val expected = schema ~> e file "expected.json"
-        val result = PGMetadataCollector().collect()
+        val expected = (schema ~> e file "expected.json").read
+        val actual = PGMetadataCollector().collect()
 
-        compare(e,expected, result)
+        compare(e, expected, prettyRender(decompose(actual)))
       })
     }
   }
 }
 
-trait Comparison extends Matchers with TestUtils {
-  implicit val formats = DefaultFormats
+trait Comparison extends TestUtils {
 
-  def compare(schema: String, file: File, seq: Seq[TableDTO]) {
-    val expected = file.read
-    val result = prettyRender(decompose(seq))
-
-    Try {
-      Comparator.MODE_STRICT.compare(expected, result)
-    } match {
-      case Success(_) => // ok
-      case Failure(e) =>
+  def compare(schema: String, expected: String, actual: String) {
+    try Comparator.MODE_STRICT.compare(expected, actual) catch {
+      case e: Exception =>
         errors ~> schema file "expected.json" write expected
-        errors ~> schema file "actual.json" write result
+        errors ~> schema file "actual.json" write actual
         throw e
     }
   }
