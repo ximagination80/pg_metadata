@@ -34,22 +34,11 @@ case class CFGService() {
       c.copy(password = x)
     }
 
-    opt[File]("outDir") required() action { (x, c) =>
-      c.copy(dir = x)
-    }
-
     opt[Boolean]("debug") optional() valueName "true|false" action { (x, c) =>
       c.copy(debug = x)
     }
 
     checkConfig { c =>
-      if (c.dir.isFile)
-        failure("Provided directory is file")
-
-      c.dir.mkdirs()
-      if (!c.dir.exists())
-        failure(s"Unable to create folder by path ${c.dir}")
-
       success
     }
   }
@@ -70,10 +59,9 @@ case class CFG(host: String = "localhost",
                schema: String = "",
                user: String = "",
                password: String = "",
-               dir: File = new File("."),
                debug: Boolean = false) {
 
-  def toSettings = AppSettings(dir, debug)
+  def toSettings = AppSettings(debug)
 
   def createConnection(f: (Connection) => Unit) = Try {
     Class.forName("org.postgresql.Driver")
@@ -86,15 +74,15 @@ case class CFG(host: String = "localhost",
   }
 }
 
-case class AppSettings(dir: File, debug: Boolean){
-  def newFile(name: String) =
-    new File(dir, name)
+case class AppSettings(debug: Boolean){
 
-  def log(msg: String): Unit = if (debug) {
+  def onDebug(f: => Unit): Unit = if (debug) f
+
+  def log(msg: String): Unit = onDebug {
     println(msg)
   }
 
-  def logF(template:String,args: String*): Unit = if (debug) {
-    printf(template,args:_*)
+  def logF(template: String, args: String*): Unit = onDebug {
+    printf(template, args: _*)
   }
 }

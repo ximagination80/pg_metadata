@@ -57,6 +57,7 @@ case class PGMetadataCollector(implicit connection: Connection, stg: AppSettings
       FROM information_schema.tables
       WHERE table_type = 'BASE TABLE'
       AND table_name != 'play_evolutions'
+      AND table_name != 'schema_version'
       AND table_schema NOT IN
       ('pg_catalog', 'information_schema');
       """
