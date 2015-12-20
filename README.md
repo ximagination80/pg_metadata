@@ -7,13 +7,12 @@
 --port 5432
 --user postgres 
 --password postgres 
---schema dvdrental 
---outDir "./model" 
+--schema postgres
 --debug true
 
 ```
 
-Result:
+#Result:
 
 * Tables
 * Columns + limitations
@@ -22,5 +21,16 @@ Result:
 * Indexes
 * Constraints (check)
 
+# Installation
+
+```scala
+ Installing required dependencies from GitHub..
+
+ git clone https://github.com/ximagination80/Comparator.git
+ cd Comparator
+ sbt test
+ sbt publishLocal
+
+```
 
 
