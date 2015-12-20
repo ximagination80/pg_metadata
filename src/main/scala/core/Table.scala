@@ -26,24 +26,7 @@ case class ForeignKeyDTO(name: String,
                          column: ColumnDTO,
                          references_to_table: TableDTO,
                          references_to_column: ColumnDTO,
-                         action_on_update:ForeignKeyAction,
-                         action_on_delete:ForeignKeyAction)
+                         action_on_update:String,
+                         action_on_delete:String)
 
 case class CheckDTO(name: String)
-
-trait ForeignKeyAction
-case object Restrict extends ForeignKeyAction
-case object NoAction extends ForeignKeyAction
-case object Cascade extends ForeignKeyAction
-case object SetNull extends ForeignKeyAction
-case object SetDefault extends ForeignKeyAction
-
-object ForeignKeyAction {
-  def apply(v: String): ForeignKeyAction = v.toUpperCase match {
-    case "RESTRICT" => Restrict
-    case "NO ACTION" => NoAction
-    case "CASCADE" => Cascade
-    case "SET NULL" => SetNull
-    case "SET DEFAULT" => SetDefault
-  }
-}

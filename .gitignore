@@ -3,5 +3,5 @@ out/
 .idea
 target
 
-# mine out Dir
-outDir
+# errors dir
+errors

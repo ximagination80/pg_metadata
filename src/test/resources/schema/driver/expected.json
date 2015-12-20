@@ -235,8 +235,8 @@
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "action_on_update":{},
-        "action_on_delete":{}
+        "action_on_update":"SET NULL",
+        "action_on_delete":"RESTRICT"
       }
     ],
     "checks":[]
@@ -405,8 +405,8 @@
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "action_on_update":{},
-        "action_on_delete":{}
+        "action_on_update":"NO ACTION",
+        "action_on_delete":"SET DEFAULT"
       },
       {
         "name":"fk_t_bus_id",
@@ -468,8 +468,8 @@
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "action_on_update":{},
-        "action_on_delete":{}
+        "action_on_update":"SET NULL",
+        "action_on_delete":"CASCADE"
       }
     ],
     "checks":[]

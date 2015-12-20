@@ -339,8 +339,8 @@ case class PGMetadataCollector(implicit connection: Connection, stg: AppSettings
           e.column.find(_.name == fk.column_name).get,
           toTable,
           toTable.column.find(_.name == fk.references_field).get,
-          ForeignKeyAction(fk.update_rule),
-          ForeignKeyAction(fk.delete_rule))
+          fk.update_rule,
+          fk.delete_rule)
       }),
         checks = checks.getOrElse(e.name, Nil).map(ch => CheckDTO(ch.constraint_name)))
     })
