@@ -13,7 +13,11 @@ case class PGMetadataCollector(implicit connection: Connection, stg: AppSettings
         Right(YesNoBoolean(s))
       case _ =>
         val MetaDataItem(qualified, _, _) = meta
-        Left(TypeDoesNotMatch(s"Cannot convert $value: ${value.asInstanceOf[AnyRef].getClass} to YesNoBoolean for column $qualified"))
+        val msg =
+           s"""Cannot convert $value: ${value.asInstanceOf[AnyRef].getClass}
+             to YesNoBoolean for column $qualified
+            """
+        Left(TypeDoesNotMatch(msg))
     }
   }
 
