@@ -1,0 +1,7 @@
+# IntelliJ
+out/
+.idea
+target
+
+# mine out Dir
+outDir
