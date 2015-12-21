@@ -31,9 +31,7 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
     def execute(): Seq[Content] = {
       stg.log(description)
       stg.log(s"SQL: $sql")
-      try {
-        SQL(sql).as(parser.*)
-      } catch {
+      try SQL(sql).as(parser.*) catch {
         case e: Exception =>
           stg.log("ERROR")
           throw e
@@ -45,11 +43,8 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class TablesService() extends Service {
     type Content = Table
 
-    override val description =
-      "list of all tables"
-
-    val parser =
-      namedParser[Table]
+    val parser = namedParser[Table]
+    val description = "list of all tables"
 
     val sql =
       s"""
@@ -81,11 +76,9 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class TablesInfoService(tables:Seq[String]) extends Service {
     type Content = TableInfo
 
-    override def description =
-      s"""all column names, types etc for tables:
-        ${tables.mkString(",")}"""
-
     val parser = namedParser[TableInfo]
+    val description = s"""all column names, types etc for tables:
+        ${tables.mkString(",")}"""
 
     def sql = s"""
      SELECT s.table_name,
@@ -109,10 +102,8 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class PrimaryKeyService(tableName:String) extends Service {
     type Content = PKName
 
-    override val description =
-      s"primary key for table $tableName"
-
     val parser = namedParser[PKName]
+    val description = s"primary key for table $tableName"
 
     val sql =
       s"""
@@ -129,10 +120,8 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class SequenceService() extends Service {
     type Content = Sequence
 
-    override val description =
-      s"list of all sequences"
-
     val parser = namedParser[Sequence]
+    val description = s"list of all sequences"
 
     val sql =
       """
@@ -152,10 +141,8 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class UniqueIndexInfoService(table:String) extends Service {
     type Content = UniqueIndexInfo
 
-    override val description =
-      s"unique indexes in $table"
-
     val parser = namedParser[UniqueIndexInfo]
+    val description = s"unique indexes in $table"
 
     val sql =
       s"""
@@ -177,10 +164,9 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class UniqueIndexService(table:String,names:Seq[Int]) extends Service {
     type Content = UniqueIndexColumnNames
 
-    override val description =
-      s"unique column names in $table for column ids ${names.mkString(",")}}"
-
     val parser = namedParser[UniqueIndexColumnNames]
+    val description =
+      s"unique column names in $table for column ids ${names.mkString(",")}}"
 
     val sql =
       s"""
@@ -204,11 +190,9 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class ForeignKeyConstraintService(names:Seq[String]) extends Service{
     type Content = ForeignKeyConstraintInfo
 
-    override val description =
-      s"""all constraints for tables:
-         ${names.mkString(",")}}"""
-
     val parser = namedParser[ForeignKeyConstraintInfo]
+    val description = s"""all constraints for tables:
+         ${names.mkString(",")}}"""
 
     val sql =
      s"""
@@ -244,11 +228,9 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class CheckConstraintService(names:Seq[String]) extends Service{
     type Content = CheckConstraintInfo
 
-    override val description =
-      s"""all check for tables:
-         ${names.mkString(",")}}"""
-
     val parser = namedParser[CheckConstraintInfo]
+    val description = s"""all check for tables:
+         ${names.mkString(",")}}"""
 
     val sql =
       s"""

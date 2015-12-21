@@ -22,6 +22,10 @@ case class CFGService() {
       c.copy(port = x)
     } text """Database port"""
 
+    opt[String]("database") required() action { (x, c) =>
+      c.copy(database = x)
+    }
+
     opt[String]("schema") required() action { (x, c) =>
       c.copy(schema = x)
     }
@@ -56,6 +60,7 @@ case class CFGService() {
 
 case class CFG(host: String = "localhost",
                port: Int = 0,
+               database: String = "",
                schema: String = "",
                user: String = "",
                password: String = "",
@@ -63,14 +68,10 @@ case class CFG(host: String = "localhost",
 
   def toSettings = AppSettings(debug)
 
-  def createConnection(f: (Connection) => Unit) = Try {
+  def createConnection(f: (Connection) => Unit) = {
     Class.forName("org.postgresql.Driver")
-    DriverManager.getConnection(s"jdbc:postgresql://$host:$port/$schema", user, password)
-  } match {
-    case Success(c) =>
-      try f(c) finally c.close()
-    case Failure(e) =>
-      e.printStackTrace()
+    val c = DriverManager.getConnection(s"jdbc:postgresql://$host:$port/$database", user, password)
+    try f(c) finally c.close()
   }
 }
 

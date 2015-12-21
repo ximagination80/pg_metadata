@@ -6,8 +6,9 @@
 --host localhost
 --port 5432
 --user postgres 
---password postgres 
---schema postgres
+--password postgres
+--database postgres
+--schema public
 --debug true
 
 ```
