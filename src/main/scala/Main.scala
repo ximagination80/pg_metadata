@@ -7,7 +7,7 @@ object Main {
       cfg.createConnection { implicit c =>
         implicit val stg = cfg.toSettings
 
-        val seq = PGMetadataCollector().collect()
+        val seq = PGMetadataCollector(cfg.schema).collect()
         Printer().printCollectedInfo(seq)
       }
     })

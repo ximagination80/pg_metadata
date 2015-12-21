@@ -5,7 +5,7 @@ import java.sql.Connection
 import anorm.Macro.namedParser
 import anorm._
 
-case class PGMetadataCollector(implicit connection: Connection, stg: AppSettings) {
+case class PGMetadataCollector(schema: String)(implicit connection: Connection, stg: AppSettings) {
 
   implicit val columnToYesNoBoolean: Column[YesNoBoolean] = Column.nonNull[YesNoBoolean] { (value, meta) =>
     value match {
@@ -52,14 +52,13 @@ case class PGMetadataCollector(implicit connection: Connection, stg: AppSettings
       namedParser[Table]
 
     val sql =
-      """
+      s"""
       SELECT table_name as name
       FROM information_schema.tables
       WHERE table_type = 'BASE TABLE'
       AND table_name != 'play_evolutions'
       AND table_name != 'schema_version'
-      AND table_schema NOT IN
-      ('pg_catalog', 'information_schema');
+      AND table_schema='$schema';
       """
   }
 
@@ -241,8 +240,7 @@ case class PGMetadataCollector(implicit connection: Connection, stg: AppSettings
       """
   }
 
-  case class CheckConstraintInfo(constraint_name: String,
-                            table_name: String)
+  case class CheckConstraintInfo(constraint_name: String, table_name: String)
   case class CheckConstraintService(names:Seq[String]) extends Service{
     type Content = CheckConstraintInfo
 
@@ -342,7 +340,8 @@ case class PGMetadataCollector(implicit connection: Connection, stg: AppSettings
           fk.update_rule,
           fk.delete_rule)
       }),
-        checks = checks.getOrElse(e.name, Nil).map(ch => CheckDTO(ch.constraint_name)))
+        checks = checks.getOrElse(e.name, Nil).
+          sortBy(_.constraint_name).map(ch => CheckDTO(ch.constraint_name)))
     })
   }
 

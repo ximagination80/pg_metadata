@@ -142,10 +142,10 @@
     "foreignKeys":[],
     "checks":[
       {
-        "name":"t_driver_sex_check"
+        "name":"t_driver_email_check"
       },
       {
-        "name":"t_driver_email_check"
+        "name":"t_driver_sex_check"
       }
     ]
   },

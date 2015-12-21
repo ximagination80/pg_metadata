@@ -1,23 +1,25 @@
 package test
 
 import java.io.File
-import org.apache.commons.io.FileUtils
+import org.apache.commons.io.FileUtils.{readFileToString,writeStringToFile}
 
 trait TestUtils {
-  def userDir = System.getProperty("user.dir")
-  def resources = new File(userDir, "/src/test/resources")
-  def schema = resources ~> "schema"
-  def errors = new File(userDir, "/src/test/errors")
-  def list(): Seq[File] = resources.listFiles().toSeq
+
+  lazy val userDir = System.getProperty("user.dir")
+  lazy val test = new File(userDir) ~> "src" ~> "test"
+  lazy val errors = test ~> "errors"
+  lazy val resources = test ~> "resources"
+  lazy val schema = resources ~> "schema"
 
   implicit class FileOperations(file: File) {
+
+    def read: String = readFileToString(file)
     def write(content: String): File = {
-      FileUtils.writeStringToFile(file, content)
+      writeStringToFile(file, content)
       file
     }
-    def read: String = FileUtils.readFileToString(file)
 
     def ~>(path: String): File = new File(file, path)
-    def file(name: String): File = new File(file, name)
+    def files: Seq[File] = file.listFiles().toSeq
   }
 }
