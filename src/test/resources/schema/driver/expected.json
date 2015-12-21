@@ -22,10 +22,7 @@
         "column_default":"''::text",
         "character_octet_length":1073741824
       }
-    ],
-    "uniqueIndexes":[],
-    "foreignKeys":[],
-    "checks":[]
+    ]
   },
   {
     "name":"t_driver",
@@ -139,7 +136,6 @@
         ]
       }
     ],
-    "foreignKeys":[],
     "checks":[
       {
         "name":"t_driver_email_check"
@@ -182,7 +178,6 @@
         "numeric_scale":0
       }
     ],
-    "uniqueIndexes":[],
     "foreignKeys":[
       {
         "name":"fk_t_bus_type_id",
@@ -219,10 +214,7 @@
               "column_default":"''::text",
               "character_octet_length":1073741824
             }
-          ],
-          "uniqueIndexes":[],
-          "foreignKeys":[],
-          "checks":[]
+          ]
         },
         "references_to_column":{
           "name":"id",
@@ -238,8 +230,7 @@
         "action_on_update":"SET NULL",
         "action_on_delete":"RESTRICT"
       }
-    ],
-    "checks":[]
+    ]
   },
   {
     "name":"t_driver_bus",
@@ -265,7 +256,6 @@
         "numeric_scale":0
       }
     ],
-    "uniqueIndexes":[],
     "foreignKeys":[
       {
         "name":"fk_t_driver_id",
@@ -390,9 +380,7 @@
                 }
               ]
             }
-          ],
-          "foreignKeys":[],
-          "checks":[]
+          ]
         },
         "references_to_column":{
           "name":"id",
@@ -452,10 +440,7 @@
               "numeric_precision_radix":2,
               "numeric_scale":0
             }
-          ],
-          "uniqueIndexes":[],
-          "foreignKeys":[],
-          "checks":[]
+          ]
         },
         "references_to_column":{
           "name":"id",
@@ -471,7 +456,6 @@
         "action_on_update":"SET NULL",
         "action_on_delete":"CASCADE"
       }
-    ],
-    "checks":[]
+    ]
   }
 ]

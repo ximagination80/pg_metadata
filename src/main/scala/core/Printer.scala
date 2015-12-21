@@ -71,7 +71,7 @@ case class Printer()(implicit cfg: AppSettings) {
             c.datetime_precision)
         }
 
-        table.foreignKeys.foreach { fk =>
+        table.foreignKeys.getOrElse(Nil).foreach { fk =>
           *()
           *("Foreign key " + fk.name)
           **(templateFK, "#", "Column name", "To Table", "To Column Name", "On Update", "On Delete")
@@ -82,7 +82,7 @@ case class Printer()(implicit cfg: AppSettings) {
             fk.action_on_delete.toString)
         }
 
-        table.uniqueIndexes.foreach { idx =>
+        table.uniqueIndexes.getOrElse(Nil)foreach { idx =>
           *()
           *("Unique index " + idx.name)
           **(templateIndexes, "#", "Column Name")
@@ -97,7 +97,7 @@ case class Printer()(implicit cfg: AppSettings) {
           *("Checks")
           **(templateChecks, "#", "Check name")
 
-          table.checks.zipWithIndex.foreach { case (check, n) =>
+          table.checks.getOrElse(Nil).zipWithIndex.foreach { case (check, n) =>
             **(templateChecks, ++(n).toString, check.name)
           }
         }

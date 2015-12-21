@@ -314,12 +314,15 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
         val uniqueIndexDTOs = UniqueIndexInfoService(tableName).execute().map(toIndex(tableName, _)).
           map(associateColumnsWithIndexes(_, columnDTOs))
 
-        TableDTO(tableName, columnDTOs, uniqueIndexDTOs, Nil, Nil)
+        TableDTO(tableName, columnDTOs, wrap(uniqueIndexDTOs), None, None)
       }).toSeq, fkConstraints, checkConstraints)
 
       tables
     }
   }
+
+  def wrap[T](seq:Seq[T]):Option[Seq[T]]=
+    if (seq.nonEmpty) Some(seq) else None
 
   def mergeAdditionalInfo(tables: Seq[TableDTO],
                           fkConstraints: Seq[ForeignKeyConstraintInfo],
@@ -328,7 +331,7 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
     val checks = checkConstraints.filterNot(_.constraint_name.contains("not_null")).groupBy(_.table_name)
 
     tables.map(e => {
-      e.copy(foreignKeys = fk.getOrElse(e.name, Nil).map(fk => {
+      val producedFk = fk.getOrElse(e.name, Nil).map(fk => {
         val toTable = tables.find(_.name == fk.references_table).
           getOrElse(throw new RuntimeException(s"Unable to find table by key ${fk.references_table}"))
 
@@ -339,9 +342,12 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
           toTable.column.find(_.name == fk.references_field).get,
           fk.update_rule,
           fk.delete_rule)
-      }),
-        checks = checks.getOrElse(e.name, Nil).
-          sortBy(_.constraint_name).map(ch => CheckDTO(ch.constraint_name)))
+      })
+
+      val producedChecks= checks.getOrElse(e.name, Nil).
+        sortBy(_.constraint_name).map(ch => CheckDTO(ch.constraint_name))
+
+      e.copy(foreignKeys = wrap(producedFk), checks = wrap(producedChecks))
     })
   }
 

@@ -395,9 +395,6 @@
         "dbType":"daterange",
         "hasSequences":false
       }
-    ],
-    "uniqueIndexes":[],
-    "foreignKeys":[],
-    "checks":[]
+    ]
   }
 ]
