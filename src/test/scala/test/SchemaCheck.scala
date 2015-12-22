@@ -18,7 +18,7 @@ class SchemaCheck extends FunSuite
   val availableSchemas = schema.files.map(_.getName).sorted
 
   availableSchemas.foreach { e =>
-    test("[" + e.capitalize + "] schema migration") {
+    test("[" + e.capitalize + "] MIGRATION ") {
       val fwy = new Flyway()
       fwy.setDataSource(url, user, password)
       fwy.setLocations(s"schema/$e")
@@ -29,7 +29,7 @@ class SchemaCheck extends FunSuite
   }
 
   availableSchemas.foreach { e =>
-    test("[" + e.capitalize + "] schema test") {
+    test("[" + e.capitalize + "] TEST ") {
       connect(e, { implicit connection =>
         val expected = (schema ~> e ~> "expected.json").read
         val actual = PGMetadataCollector(e).collect()
