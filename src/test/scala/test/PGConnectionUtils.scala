@@ -1,17 +1,19 @@
 package test
 
 import java.sql.{Connection, DriverManager}
+import com.typesafe.config.ConfigFactory
 
 trait PGConnectionUtils {
   Class.forName(driver)
 
-  // TODO extract to props
-  def host: String = "localhost"
-  def port: Int = 5432
-  def user: String = "postgres"
-  def password: String = "postgres"
-  def database: String = "postgres"
-  def driver: String = "org.postgresql.Driver"
+  lazy val cfg = ConfigFactory.load().getConfig("pg")
+
+  def host: String = cfg.getString("host")
+  def port: Int = cfg.getInt("port")
+  def user: String = cfg.getString("user")
+  def password: String = cfg.getString("password")
+  def database: String = cfg.getString("database")
+  def driver: String = cfg.getString("driver")
   def url: String = s"jdbc:postgresql://$host:$port/$database"
 
   def url(schema:String=""): String =
