@@ -41,7 +41,7 @@ class SchemaCheck extends FunSuite
   }
 
   def compare(schema: String, expected: String, actual: String) {
-    try Comparator.MODE_STRICT.compare(expected, actual) catch {
+    try Comparator.strict.compare(expected, actual) catch {
       case e: Exception =>
         errors ~> schema ~> "expected.json" write expected
         errors ~> schema ~> "actual.json" write actual

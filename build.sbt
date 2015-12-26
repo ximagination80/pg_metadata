@@ -24,7 +24,7 @@ resolvers ++= Seq(
   "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases/",
   Resolver.sonatypeRepo("public"))
 
-scalacOptions ++= Seq("-unchecked", "-deprecation", "-encoding", "UTF-8")
+scalacOptions ++= Seq("-Ylog-classpath", "-unchecked", "-deprecation", "-encoding", "UTF-8")
 
 crossScalaVersions := Seq("2.11.7","2.10.5")
 
