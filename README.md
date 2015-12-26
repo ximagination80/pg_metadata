@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ximagination80/pg_metadata.png)](https://travis-ci.org/ximagination80/pg_metadata)
+[![Build Status](https://travis-ci.org/ximagination80/pg_metadata.svg?branch=master)](https://travis-ci.org/ximagination80/pg_metadata)
 [![codecov.io](https://codecov.io/github/ximagination80/pg_metadata/coverage.svg?branch=master)](https://codecov.io/github/ximagination80/pg_metadata?branch=master)
 [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 

@@ -26,7 +26,6 @@ jdk:
 before_install:
   - git clone https://github.com/ximagination80/Comparator.git
   - cd Comparator
-  - sbt test
   - sbt publishLocal
 
   - pip install --user codecov
