@@ -8,16 +8,8 @@ import anorm._
 case class PGMetadataCollector(schema: String)(implicit connection: Connection, stg: Logger) {
 
   implicit val columnToYesNoBoolean: Column[YesNoBoolean] = Column.nonNull1[YesNoBoolean] { (value, meta) =>
-    value match {
-      case s: String =>
-        Right(YesNoBoolean(s))
-      case _ =>
-        val MetaDataItem(qualified, _, _) = meta
-        val msg =
-           s"""Cannot convert $value: ${value.asInstanceOf[AnyRef].getClass}
-             to YesNoBoolean for column $qualified
-            """
-        Left(TypeDoesNotMatch(msg))
+    (value: @unchecked) match {
+      case s: String => Right(YesNoBoolean(s))
     }
   }
 
@@ -31,11 +23,7 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
     def execute(): Seq[Content] = {
       stg.log(description)
       stg.log(s"SQL: $sql")
-      try SQL(sql).as(parser.*) catch {
-        case e: Exception =>
-          stg.log("ERROR")
-          throw e
-      }
+      SQL(sql).as(parser.*)
     }
   }
 

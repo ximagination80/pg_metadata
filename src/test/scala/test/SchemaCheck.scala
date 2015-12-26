@@ -17,7 +17,7 @@ class SchemaCheck extends FunSuite
   implicit val settings = AppLogger(debug = false)
   implicit val formats = DefaultFormats
 
-  val availableSchemas = Seq("driver","world","unstructured") //schema.files.map(_.getName).sorted
+  val availableSchemas = Seq("driver","world","unstructured","empty") //schema.files.map(_.getName).sorted
 
   availableSchemas.foreach { e =>
     test("[" + e.capitalize + "] MIGRATION ") {
