@@ -5,8 +5,8 @@ import org.apache.commons.io.FileUtils.{readFileToString,writeStringToFile}
 import Ops._
 
 trait TestUtils {
-  lazy val userDir = System.getProperty("user.dir")
-  lazy val test = new File(userDir) ~> "src" ~> "test"
+  lazy val `user.dir` = new File(System.getProperty("user.dir"))
+  lazy val test = `user.dir` ~> "src" ~> "test"
   lazy val errors = test ~> "errors"
   lazy val resources = test ~> "resources"
   lazy val schema = resources ~> "schema"
