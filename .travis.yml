@@ -27,12 +27,13 @@ jdk:
 before_install:
   - pip install --user codecov
 
-  - git clone https://github.com/playframework/anorm.git
-  - cd anorm
-  - sbt publishLocal
-
   - git clone https://github.com/ximagination80/Comparator.git
   - cd Comparator
+  - sbt test
+  - sbt publishLocal
+
+  - git clone https://github.com/playframework/anorm.git
+  - cd anorm
   - sbt publishLocal
 
 addons:
