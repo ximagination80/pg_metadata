@@ -6,7 +6,6 @@ language:
   - scala
 
 scala:
-  - 2.10.5
   - 2.11.7
 
 branches:
@@ -27,6 +26,7 @@ before_install:
   - git clone https://github.com/ximagination80/Comparator.git
   - cd Comparator
   - sbt publishLocal
+  - cd ..
 
   - pip install --user codecov
 
