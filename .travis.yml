@@ -31,7 +31,7 @@ addons:
   postgresql: "9.4"
 
 before_script:
-  - psql -c 'create database postgres;' -U postgres
+  - psql -U postgres
 
 script:
   - sbt ++$TRAVIS_SCALA_VERSION clean coverage test
