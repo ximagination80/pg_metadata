@@ -2,6 +2,8 @@ name := "pg_metadata"
 
 version := "1.0"
 
+organization := "imagination"
+
 scalaVersion := "2.11.7"
 
 libraryDependencies ++= Seq(
@@ -22,5 +24,22 @@ resolvers ++= Seq(
   "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases/",
   Resolver.sonatypeRepo("public"))
 
+scalacOptions ++= Seq("-unchecked", "-deprecation", "-encoding", "UTF-8")
+
+crossScalaVersions := Seq("2.11.7","2.10.5")
+
+description := """a postgres database metadata collecting tool """
+
+licenses := Seq("The Apache License, Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
+
+homepage := Some(url("https://github.com/ximagination80/pg_metadata"))
+
+coverageEnabled.in(Test, test) := true
+
+coverageMinimum := 90
+
+coverageFailOnMinimum := true
 
 parallelExecution in Test := false
+
+coverageExcludedPackages := "console.*;"

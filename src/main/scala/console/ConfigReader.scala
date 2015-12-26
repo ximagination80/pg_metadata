@@ -1,9 +1,6 @@
-package core
+package console
 
-import java.io.File
 import java.sql.{Connection, DriverManager}
-
-import scala.util.{Failure, Success, Try}
 
 case class CFGService() {
   val parser = new scopt.OptionParser[CFG]("DAO layer generator for postgres") {

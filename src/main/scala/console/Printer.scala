@@ -1,6 +1,8 @@
-package core
+package console
 
-import language.implicitConversions
+import core.TableDTO
+
+import scala.language.implicitConversions
 
 case class Printer()(implicit cfg: AppSettings) {
   val templateColumns = "|%2s|%15s|%30s|%30s|%30s|%15s|\n"

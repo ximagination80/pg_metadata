@@ -1,7 +1,8 @@
 package test
 
 import comparator._
-import core.{AppSettings, PGMetadataCollector}
+import console.AppSettings
+import core.PGMetadataCollector
 import net.liftweb.json.DefaultFormats
 import net.liftweb.json.Extraction._
 import net.liftweb.json.JsonAST._

@@ -1,3 +1,5 @@
+package console
+
 import core._
 
 object Main {
