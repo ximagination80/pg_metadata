@@ -284,10 +284,10 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
         val uniqueIndexDTOs = UniqueIndexInfoService(tableName).execute().map(toIndex(tableName, _)).
           map(associateColumnsWithIndexes(_, columnDTOs))
 
-        TableDTO(tableName, columnDTOs, wrap(uniqueIndexDTOs), None, None)
+        TableDTO(tableName, columnDTOs, wrap(uniqueIndexDTOs.sortBy(_.name)), None, None)
       }).toSeq, fkConstraints, checkConstraints)
 
-      tables
+      tables.sortBy(_.name)
     }
   }
 
@@ -315,9 +315,12 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
       })
 
       val producedChecks= checks.getOrElse(e.name, Nil).
-        sortBy(_.constraint_name).map(ch => CheckDTO(ch.constraint_name))
+        map(ch => CheckDTO(ch.constraint_name))
 
-      e.copy(foreignKeys = wrap(producedFk), checks = wrap(producedChecks))
+      e.copy(
+        foreignKeys = wrap(producedFk.sortBy(_.name)),
+        checks = wrap(producedChecks.sortBy(_.name))
+      )
     })
   }
 
