@@ -28,13 +28,13 @@ before_install:
   - sbt publishLocal
   - cd ..
 
-  - pip install --user codecov
+#  - pip install --user codecov
 
 addons:
   postgresql: "9.4"
 
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION clean coverage test
+  - sbt ++$TRAVIS_SCALA_VERSION clean test
 
-after_success:
-  - codecov
+# after_success:
+#  - codecov
