@@ -1,7 +1,7 @@
 package test
 
 import comparator._
-import console.AppSettings
+import console.AppLogger
 import core.PGMetadataCollector
 import net.liftweb.json.DefaultFormats
 import net.liftweb.json.Extraction._
@@ -14,7 +14,7 @@ class SchemaCheck extends FunSuite
       with PGConnectionUtils
       with TestUtils {
 
-  implicit val settings = AppSettings(debug = false)
+  implicit val settings = AppLogger(debug = false)
   implicit val formats = DefaultFormats
 
   val availableSchemas = Seq("driver","world","unstructured") //schema.files.map(_.getName).sorted

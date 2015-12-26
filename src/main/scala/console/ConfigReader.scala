@@ -2,6 +2,8 @@ package console
 
 import java.sql.{Connection, DriverManager}
 
+import core.Logger
+
 case class CFGService() {
   val parser = new scopt.OptionParser[CFG]("DAO layer generator for postgres") {
     head( """
@@ -63,7 +65,7 @@ case class CFG(host: String = "localhost",
                password: String = "",
                debug: Boolean = false) {
 
-  def toSettings = AppSettings(debug)
+  def toLogger = AppLogger(debug)
 
   def createConnection(f: (Connection) => Unit) = {
     Class.forName("org.postgresql.Driver")
@@ -72,7 +74,7 @@ case class CFG(host: String = "localhost",
   }
 }
 
-case class AppSettings(debug: Boolean){
+case class AppLogger(debug: Boolean) extends Logger {
 
   def onDebug(f: => Unit): Unit = if (debug) f
 

@@ -1,10 +1,10 @@
 package console
 
-import core.TableDTO
+import core.{Logger, TableDTO}
 
 import scala.language.implicitConversions
 
-case class Printer()(implicit cfg: AppSettings) {
+case class Printer()(implicit cfg: Logger) {
   val templateColumns = "|%2s|%15s|%30s|%30s|%30s|%15s|\n"
   val templateColumnsDetails = "|%2s|%30s|%60s|%20s|%20s|%20s|%20s|%20s|%20s|\n"
   val templateFK = "|%2s|%46s|%30s|%30s|%15s|%15s|\n"

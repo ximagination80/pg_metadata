@@ -4,9 +4,8 @@ import java.sql.Connection
 
 import anorm.Macro.namedParser
 import anorm._
-import console.AppSettings
 
-case class PGMetadataCollector(schema: String)(implicit connection: Connection, stg: AppSettings) {
+case class PGMetadataCollector(schema: String)(implicit connection: Connection, stg: Logger) {
 
   implicit val columnToYesNoBoolean: Column[YesNoBoolean] = Column.nonNull1[YesNoBoolean] { (value, meta) =>
     value match {
