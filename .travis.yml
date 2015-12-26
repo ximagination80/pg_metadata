@@ -1,0 +1,42 @@
+# See http://about.travis-ci.org/docs/user/build-configuration/
+# http://docs.travis-ci.com/user/workers/container-based-infrastructure/
+sudo: false
+
+language:
+  - scala
+
+scala:
+  - 2.9.3
+  - 2.10.5
+  - 2.11.7
+
+branches:
+  only:
+    - master
+
+notifications:
+  email:
+    recipients:
+      - ximagination80@gmail.com
+
+jdk:
+  - openjdk7
+  - oraclejdk7
+  - oraclejdk8
+
+before_install:
+  - pip install --user codecov
+
+addons:
+  postgresql: "9.2"
+  postgresql: "9.3"
+  postgresql: "9.4"
+
+before_script:
+  - psql -c 'create database postgres;' -U postgres -P postgres
+
+script:
+  - sbt ++$TRAVIS_SCALA_VERSION clean coverage test
+
+after_success:
+  - codecov
