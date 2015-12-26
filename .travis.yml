@@ -24,16 +24,12 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - pip install --user codecov
-
   - git clone https://github.com/ximagination80/Comparator.git
   - cd Comparator
   - sbt test
   - sbt publishLocal
 
-  - git clone https://github.com/playframework/anorm.git
-  - cd anorm
-  - sbt publishLocal -feature
+  - pip install --user codecov
 
 addons:
   postgresql: "9.4"
