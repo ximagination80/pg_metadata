@@ -8,6 +8,7 @@ import net.liftweb.json.Extraction._
 import net.liftweb.json.JsonAST._
 import org.flywaydb.core.Flyway
 import org.scalatest.FunSuite
+import Ops._
 
 class SchemaCheck extends FunSuite
       with PGConnectionUtils

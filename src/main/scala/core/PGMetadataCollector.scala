@@ -8,7 +8,7 @@ import console.AppSettings
 
 case class PGMetadataCollector(schema: String)(implicit connection: Connection, stg: AppSettings) {
 
-  implicit val columnToYesNoBoolean: Column[YesNoBoolean] = Column.nonNull[YesNoBoolean] { (value, meta) =>
+  implicit val columnToYesNoBoolean: Column[YesNoBoolean] = Column.nonNull1[YesNoBoolean] { (value, meta) =>
     value match {
       case s: String =>
         Right(YesNoBoolean(s))
