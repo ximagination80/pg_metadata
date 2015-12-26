@@ -28,12 +28,10 @@ before_install:
   - pip install --user codecov
 
 addons:
-  postgresql: "9.2"
-  postgresql: "9.3"
   postgresql: "9.4"
 
 before_script:
-  - psql -c 'create database if not exists postgres;' -U postgres
+  - psql -c 'create database postgres;' -U postgres
 
 script:
   - sbt ++$TRAVIS_SCALA_VERSION clean coverage test
