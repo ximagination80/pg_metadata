@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.play" % "anorm_2.11" % "3.0.0-M1",
   "org.flywaydb" % "flyway-core" % "3.2.1",
   "net.liftweb" %% "lift-json" % "3.0-M7",
-  "imagination" % "comparator_2.11" % "0.4-SNAPSHOT",
+  "imagination" % "comparator_2.11" % "0.5-SNAPSHOT",
   "com.typesafe" % "config" % "1.3.0"
 )
 
