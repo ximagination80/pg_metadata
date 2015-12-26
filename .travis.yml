@@ -6,7 +6,6 @@ language:
   - scala
 
 scala:
-  - 2.9.3
   - 2.10.5
   - 2.11.7
 
@@ -34,7 +33,7 @@ before_install:
 
   - git clone https://github.com/playframework/anorm.git
   - cd anorm
-  - sbt publishLocal
+  - sbt publishLocal -feature
 
 addons:
   postgresql: "9.4"
