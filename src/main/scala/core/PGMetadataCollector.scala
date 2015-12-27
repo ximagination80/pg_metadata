@@ -2,16 +2,19 @@ package core
 
 import java.sql.Connection
 
-import anorm.Macro.namedParser
+import anorm.SqlParser._
 import anorm._
 
 case class PGMetadataCollector(schema: String)(implicit connection: Connection, stg: Logger) {
 
-  implicit val columnToYesNoBoolean: Column[YesNoBoolean] = Column.nonNull1[YesNoBoolean] { (value, meta) =>
+  implicit val columnToYesNoBoolean: Column[YesNoBoolean] = Column.nonNull[YesNoBoolean] { (value, meta) =>
     (value: @unchecked) match {
       case s: String => Right(YesNoBoolean(s))
     }
   }
+
+  def optInt(key:String): RowParser[Option[Int]] = get[Option[Int]](key)
+  def optStr(key:String): RowParser[Option[String]] = get[Option[String]](key)
 
   trait Service {
     type Content
@@ -27,11 +30,15 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
     }
   }
 
+  import anorm.SqlParser._
+
   case class Table(name: String)
   case class TablesService() extends Service {
     type Content = Table
 
-    val parser = namedParser[Table]
+    val parser = str("name") map {
+      case name => Table(name)
+    }
     val description = "list of all tables"
 
     val sql =
@@ -64,7 +71,21 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class TablesInfoService(tables:Seq[String]) extends Service {
     type Content = TableInfo
 
-    val parser = namedParser[TableInfo]
+    val parser =
+      str("table_name") ~
+        str("column_name") ~
+        get[YesNoBoolean]("is_nullable") ~
+        str("data_type") ~
+        optStr("column_default") ~
+        optInt("character_maximum_length") ~
+        optInt("character_octet_length") ~
+        optInt("numeric_precision") ~
+        optInt("numeric_precision_radix") ~
+        optInt("numeric_scale") ~
+        optInt("datetime_precision") map {
+        case tn ~ cn ~ nullable ~ dt ~ cd ~ cml ~ col ~ np ~ npr ~ ns ~ dp =>
+          TableInfo(tn, cn, nullable, dt, cd, cml, col, np, npr, ns, dp)
+    }
     val description = s"""all column names, types etc for tables:
         ${tables.mkString(",")}"""
 
@@ -90,7 +111,9 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class PrimaryKeyService(tableName:String) extends Service {
     type Content = PKName
 
-    val parser = namedParser[PKName]
+    val parser = str("pk_name") map {
+      case pk_name => PKName(pk_name)
+    }
     val description = s"primary key for table $tableName"
 
     val sql =
@@ -108,7 +131,9 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class SequenceService() extends Service {
     type Content = Sequence
 
-    val parser = namedParser[Sequence]
+    val parser = str("name") map {
+      case name => Sequence(name)
+    }
     val description = s"list of all sequences"
 
     val sql =
@@ -129,7 +154,9 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class UniqueIndexInfoService(table:String) extends Service {
     type Content = UniqueIndexInfo
 
-    val parser = namedParser[UniqueIndexInfo]
+    val parser = str("relname") ~ str("indkey") map {
+      case relname ~ indkey => UniqueIndexInfo(relname, indkey)
+    }
     val description = s"unique indexes in $table"
 
     val sql =
@@ -152,7 +179,9 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class UniqueIndexService(table:String,names:Seq[Int]) extends Service {
     type Content = UniqueIndexColumnNames
 
-    val parser = namedParser[UniqueIndexColumnNames]
+    val parser = str("name") map {
+      case name => UniqueIndexColumnNames(name)
+    }
     val description =
       s"unique column names in $table for column ids ${names.mkString(",")}}"
 
@@ -178,7 +207,16 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class ForeignKeyConstraintService(names:Seq[String]) extends Service{
     type Content = ForeignKeyConstraintInfo
 
-    val parser = namedParser[ForeignKeyConstraintInfo]
+    val parser =
+      str("constraint_name") ~
+        str("table_name") ~
+        str("column_name") ~
+        str("references_table") ~
+        str("references_field") ~
+        str("update_rule") ~
+        str("delete_rule") map {
+        case cont_name ~ tn ~ cn ~ rt ~ rf ~ ur ~ dr => ForeignKeyConstraintInfo(cont_name, tn, cn, rt, rf, ur, dr)
+      }
     val description = s"""all constraints for tables:
          ${names.mkString(",")}}"""
 
@@ -216,7 +254,9 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
   case class CheckConstraintService(names:Seq[String]) extends Service{
     type Content = CheckConstraintInfo
 
-    val parser = namedParser[CheckConstraintInfo]
+    val parser = str("constraint_name") ~ str("table_name") map {
+      case constraint_name ~ table_name => CheckConstraintInfo(constraint_name, table_name)
+    }
     val description = s"""all check for tables:
          ${names.mkString(",")}}"""
 

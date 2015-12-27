@@ -6,6 +6,7 @@ language:
   - scala
 
 scala:
+  - 2.10.5
   - 2.11.7
 
 branches:
@@ -18,6 +19,8 @@ notifications:
       - ximagination80@gmail.com
 
 jdk:
+  - openjdk7
+  - oraclejdk7
   - oraclejdk8
 
 before_install:
@@ -29,7 +32,6 @@ before_install:
   - pip install --user codecov
 
 addons:
-  postgresql: "9.3"
   postgresql: "9.4"
 
 script:
