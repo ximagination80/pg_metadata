@@ -1,11 +1,10 @@
 [![Build Status](https://travis-ci.org/ximagination80/pg_metadata.svg?branch=master)](https://travis-ci.org/ximagination80/pg_metadata)
 [![codecov.io](https://codecov.io/github/ximagination80/pg_metadata/coverage.svg?branch=master)](https://codecov.io/github/ximagination80/pg_metadata?branch=master)
 [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
+[![Join the chat at https://gitter.im/ximagination80/pg_metadata](https://badges.gitter.im/ximagination80/pg_metadata.svg)](https://gitter.im/ximagination80/pg_metadata?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Postgres metadata collector
 # How to run
-
-[![Join the chat at https://gitter.im/ximagination80/pg_metadata](https://badges.gitter.im/ximagination80/pg_metadata.svg)](https://gitter.im/ximagination80/pg_metadata?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ```scala
 
