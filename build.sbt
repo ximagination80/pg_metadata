@@ -13,7 +13,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.play" % "anorm_2.11" % "2.3.10",
   "org.flywaydb" % "flyway-core" % "3.2.1",
   "net.liftweb" %% "lift-json" % "3.0-M7",
-  "imagination" % "comparator_2.11" % "0.5-SNAPSHOT"
+  "imagination" % "comparator_2.11" % "0.6-SNAPSHOT"
 )
 
 libraryDependencies ++= Seq(
@@ -35,7 +35,7 @@ homepage := Some(url("https://github.com/ximagination80/pg_metadata"))
 
 coverageEnabled.in(Test, test) := true
 
-coverageMinimum := 90
+coverageMinimum := 95
 
 coverageFailOnMinimum := true
 

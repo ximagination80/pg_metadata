@@ -110,6 +110,22 @@
         "character_octet_length":24
       }
     ],
+    "indexes":[
+      {
+        "name":"datsrcln_datasrc_id_idx",
+        "columns":[
+          {
+            "name":"datasrc_id",
+            "primary":true,
+            "nullable":false,
+            "dbType":"character",
+            "hasSequences":false,
+            "character_maximum_length":6,
+            "character_octet_length":24
+          }
+        ]
+      }
+    ],
     "foreignKeys":[
       {
         "name":"datsrcln_datasrc_id_fkey",
@@ -382,6 +398,50 @@
               "character_maximum_length":1,
               "character_octet_length":4
             }
+          ],
+          "indexes":[
+            {
+              "name":"nut_data_deriv_cd_idx",
+              "columns":[
+                {
+                  "name":"deriv_cd",
+                  "primary":false,
+                  "nullable":true,
+                  "dbType":"text",
+                  "hasSequences":false,
+                  "character_octet_length":1073741824
+                }
+              ]
+            },
+            {
+              "name":"nut_data_nutr_no_idx",
+              "columns":[
+                {
+                  "name":"nutr_no",
+                  "primary":true,
+                  "nullable":false,
+                  "dbType":"character",
+                  "hasSequences":false,
+                  "character_maximum_length":3,
+                  "character_octet_length":12
+                }
+              ]
+            },
+            {
+              "name":"nut_data_src_cd_idx",
+              "columns":[
+                {
+                  "name":"src_cd",
+                  "primary":false,
+                  "nullable":false,
+                  "dbType":"integer",
+                  "hasSequences":false,
+                  "numeric_precision":32,
+                  "numeric_precision_radix":2,
+                  "numeric_scale":0
+                }
+              ]
+            }
           ]
         },
         "references_to_column":{
@@ -563,6 +623,50 @@
               "hasSequences":false,
               "character_maximum_length":1,
               "character_octet_length":4
+            }
+          ],
+          "indexes":[
+            {
+              "name":"nut_data_deriv_cd_idx",
+              "columns":[
+                {
+                  "name":"deriv_cd",
+                  "primary":false,
+                  "nullable":true,
+                  "dbType":"text",
+                  "hasSequences":false,
+                  "character_octet_length":1073741824
+                }
+              ]
+            },
+            {
+              "name":"nut_data_nutr_no_idx",
+              "columns":[
+                {
+                  "name":"nutr_no",
+                  "primary":true,
+                  "nullable":false,
+                  "dbType":"character",
+                  "hasSequences":false,
+                  "character_maximum_length":3,
+                  "character_octet_length":12
+                }
+              ]
+            },
+            {
+              "name":"nut_data_src_cd_idx",
+              "columns":[
+                {
+                  "name":"src_cd",
+                  "primary":false,
+                  "nullable":false,
+                  "dbType":"integer",
+                  "hasSequences":false,
+                  "numeric_precision":32,
+                  "numeric_precision_radix":2,
+                  "numeric_scale":0
+                }
+              ]
             }
           ]
         },
@@ -746,6 +850,50 @@
               "character_maximum_length":1,
               "character_octet_length":4
             }
+          ],
+          "indexes":[
+            {
+              "name":"nut_data_deriv_cd_idx",
+              "columns":[
+                {
+                  "name":"deriv_cd",
+                  "primary":false,
+                  "nullable":true,
+                  "dbType":"text",
+                  "hasSequences":false,
+                  "character_octet_length":1073741824
+                }
+              ]
+            },
+            {
+              "name":"nut_data_nutr_no_idx",
+              "columns":[
+                {
+                  "name":"nutr_no",
+                  "primary":true,
+                  "nullable":false,
+                  "dbType":"character",
+                  "hasSequences":false,
+                  "character_maximum_length":3,
+                  "character_octet_length":12
+                }
+              ]
+            },
+            {
+              "name":"nut_data_src_cd_idx",
+              "columns":[
+                {
+                  "name":"src_cd",
+                  "primary":false,
+                  "nullable":false,
+                  "dbType":"integer",
+                  "hasSequences":false,
+                  "numeric_precision":32,
+                  "numeric_precision_radix":2,
+                  "numeric_scale":0
+                }
+              ]
+            }
           ]
         },
         "references_to_column":{
@@ -927,6 +1075,50 @@
               "hasSequences":false,
               "character_maximum_length":1,
               "character_octet_length":4
+            }
+          ],
+          "indexes":[
+            {
+              "name":"nut_data_deriv_cd_idx",
+              "columns":[
+                {
+                  "name":"deriv_cd",
+                  "primary":false,
+                  "nullable":true,
+                  "dbType":"text",
+                  "hasSequences":false,
+                  "character_octet_length":1073741824
+                }
+              ]
+            },
+            {
+              "name":"nut_data_nutr_no_idx",
+              "columns":[
+                {
+                  "name":"nutr_no",
+                  "primary":true,
+                  "nullable":false,
+                  "dbType":"character",
+                  "hasSequences":false,
+                  "character_maximum_length":3,
+                  "character_octet_length":12
+                }
+              ]
+            },
+            {
+              "name":"nut_data_src_cd_idx",
+              "columns":[
+                {
+                  "name":"src_cd",
+                  "primary":false,
+                  "nullable":false,
+                  "dbType":"integer",
+                  "hasSequences":false,
+                  "numeric_precision":32,
+                  "numeric_precision_radix":2,
+                  "numeric_scale":0
+                }
+              ]
             }
           ]
         },
@@ -1112,6 +1304,22 @@
         "numeric_precision_radix":2
       }
     ],
+    "indexes":[
+      {
+        "name":"food_des_fdgrp_cd_idx",
+        "columns":[
+          {
+            "name":"fdgrp_cd",
+            "primary":false,
+            "nullable":false,
+            "dbType":"character",
+            "hasSequences":false,
+            "character_maximum_length":4,
+            "character_octet_length":16
+          }
+        ]
+      }
+    ],
     "foreignKeys":[
       {
         "name":"food_des_fdgrp_cd_fkey",
@@ -1206,6 +1414,31 @@
         "dbType":"text",
         "hasSequences":false,
         "character_octet_length":1073741824
+      }
+    ],
+    "indexes":[
+      {
+        "name":"footnote_ndb_no_idx",
+        "columns":[
+          {
+            "name":"ndb_no",
+            "primary":false,
+            "nullable":false,
+            "dbType":"character",
+            "hasSequences":false,
+            "character_maximum_length":5,
+            "character_octet_length":20
+          },
+          {
+            "name":"nutr_no",
+            "primary":false,
+            "nullable":true,
+            "dbType":"character",
+            "hasSequences":false,
+            "character_maximum_length":3,
+            "character_octet_length":12
+          }
+        ]
       }
     ],
     "foreignKeys":[
@@ -1343,6 +1576,22 @@
               "hasSequences":false,
               "numeric_precision":53,
               "numeric_precision_radix":2
+            }
+          ],
+          "indexes":[
+            {
+              "name":"food_des_fdgrp_cd_idx",
+              "columns":[
+                {
+                  "name":"fdgrp_cd",
+                  "primary":false,
+                  "nullable":false,
+                  "dbType":"character",
+                  "hasSequences":false,
+                  "character_maximum_length":4,
+                  "character_octet_length":16
+                }
+              ]
             }
           ]
         },
@@ -1599,6 +1848,50 @@
         "character_octet_length":4
       }
     ],
+    "indexes":[
+      {
+        "name":"nut_data_deriv_cd_idx",
+        "columns":[
+          {
+            "name":"deriv_cd",
+            "primary":false,
+            "nullable":true,
+            "dbType":"text",
+            "hasSequences":false,
+            "character_octet_length":1073741824
+          }
+        ]
+      },
+      {
+        "name":"nut_data_nutr_no_idx",
+        "columns":[
+          {
+            "name":"nutr_no",
+            "primary":true,
+            "nullable":false,
+            "dbType":"character",
+            "hasSequences":false,
+            "character_maximum_length":3,
+            "character_octet_length":12
+          }
+        ]
+      },
+      {
+        "name":"nut_data_src_cd_idx",
+        "columns":[
+          {
+            "name":"src_cd",
+            "primary":false,
+            "nullable":false,
+            "dbType":"integer",
+            "hasSequences":false,
+            "numeric_precision":32,
+            "numeric_precision_radix":2,
+            "numeric_scale":0
+          }
+        ]
+      }
+    ],
     "foreignKeys":[
       {
         "name":"nut_data_deriv_cd_fkey",
@@ -1776,6 +2069,22 @@
               "hasSequences":false,
               "numeric_precision":53,
               "numeric_precision_radix":2
+            }
+          ],
+          "indexes":[
+            {
+              "name":"food_des_fdgrp_cd_idx",
+              "columns":[
+                {
+                  "name":"fdgrp_cd",
+                  "primary":false,
+                  "nullable":false,
+                  "dbType":"character",
+                  "hasSequences":false,
+                  "character_maximum_length":4,
+                  "character_octet_length":16
+                }
+              ]
             }
           ]
         },
@@ -2205,6 +2514,22 @@
               "hasSequences":false,
               "numeric_precision":53,
               "numeric_precision_radix":2
+            }
+          ],
+          "indexes":[
+            {
+              "name":"food_des_fdgrp_cd_idx",
+              "columns":[
+                {
+                  "name":"fdgrp_cd",
+                  "primary":false,
+                  "nullable":false,
+                  "dbType":"character",
+                  "hasSequences":false,
+                  "character_maximum_length":4,
+                  "character_octet_length":16
+                }
+              ]
             }
           ]
         },

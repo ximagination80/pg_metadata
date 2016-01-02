@@ -45,7 +45,7 @@ trait PGConnectionUtils extends TestUtils{
   def url(schema:String=""): String =
     if (schema.nonEmpty) url+s"?currentSchema=$schema" else url
 
-  def connect(schema: String = "", f: (Connection) => Unit) = {
+  def connect(schema: String, f: (Connection) => Unit) = {
     val c = DriverManager.getConnection(url(schema), user, password)
     try f(c) finally c.close()
   }

@@ -5,7 +5,7 @@ import java.sql.Connection
 import anorm.SqlParser._
 import anorm._
 
-case class PGMetadataCollector(schema: String)(implicit connection: Connection, stg: Logger) {
+case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logger) {
 
   implicit val columnToYesNoBoolean: Column[YesNoBoolean] = Column.nonNull[YesNoBoolean] { (value, meta) =>
     (value: @unchecked) match {
@@ -39,7 +39,7 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
     val parser = str("name") map {
       case name => Table(name)
     }
-    val description = "list of all tables"
+    val description = "List of all tables"
 
     val sql =
       s"""
@@ -86,7 +86,7 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
         case tn ~ cn ~ nullable ~ dt ~ cd ~ cml ~ col ~ np ~ npr ~ ns ~ dp =>
           TableInfo(tn, cn, nullable, dt, cd, cml, col, np, npr, ns, dp)
     }
-    val description = s"""all column names, types etc for tables:
+    val description = s"""All column names, types etc for tables:
         ${tables.mkString(",")}"""
 
     def sql = s"""
@@ -114,7 +114,7 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
     val parser = str("pk_name") map {
       case pk_name => PKName(pk_name)
     }
-    val description = s"primary key for table $tableName"
+    val description = s"Primary key for table $tableName"
 
     val sql =
       s"""
@@ -134,7 +134,7 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
     val parser = str("name") map {
       case name => Sequence(name)
     }
-    val description = s"list of all sequences"
+    val description = s"List of all sequences"
 
     val sql =
       """
@@ -150,16 +150,17 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
       """
   }
 
-  case class UniqueIndexInfo(relname: String, indkey: String)
-  case class UniqueIndexInfoService(table:String) extends Service {
-    type Content = UniqueIndexInfo
-
+  case class IndexInfo(relname: String, indkey: String)
+  
+  object IndexInfo {
+    
     val parser = str("relname") ~ str("indkey") map {
-      case relname ~ indkey => UniqueIndexInfo(relname, indkey)
+      case relname ~ indkey => IndexInfo(relname, indkey)
     }
-    val description = s"unique indexes in $table"
 
-    val sql =
+    def indexSQL(table: String, unique: Boolean) = {
+      val flag = if (unique) "t" else "false"
+
       s"""
       SELECT relname,cast(indkey as text)
       FROM pg_class, pg_index
@@ -169,21 +170,36 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
       FROM pg_index, pg_class
       WHERE pg_class.relname='$table'
       AND pg_class.oid=pg_index.indrelid
-      AND indisunique = 't' AND indisprimary = 'f'
+      AND indisunique = '$flag' AND indisprimary = 'f'
       );
       """
+    }
   }
 
-  case class UniqueIndex(idxName: String, columns: Seq[String])
-  case class UniqueIndexColumnNames(name: String)
-  case class UniqueIndexService(table:String,names:Seq[Int]) extends Service {
-    type Content = UniqueIndexColumnNames
+  case class UniqueIndexInfoService(table: String) extends Service {
+    type Content = IndexInfo
+    val parser = IndexInfo.parser
+    val description = s"Unique indexes in $table"
+    val sql = IndexInfo.indexSQL(table, unique = true)
+  }
+
+  case class IndexInfoService(table: String) extends Service {
+    type Content = IndexInfo
+    val parser = IndexInfo.parser
+    val description = s"Indexes in $table"
+    val sql = IndexInfo.indexSQL(table, unique = false)
+  }
+
+  case class Index(idxName: String, columns: Seq[String])
+  case class TableColumnName(name: String)
+  case class TableNamesService(table:String,names:Seq[Int]) extends Service {
+    type Content = TableColumnName
 
     val parser = str("name") map {
-      case name => UniqueIndexColumnNames(name)
+      case name => TableColumnName(name)
     }
     val description =
-      s"unique column names in $table for column ids ${names.mkString(",")}}"
+      s"Unique column names in $table for column ids ${names.mkString(",")}}"
 
     val sql =
       s"""
@@ -217,7 +233,7 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
         str("delete_rule") map {
         case cont_name ~ tn ~ cn ~ rt ~ rf ~ ur ~ dr => ForeignKeyConstraintInfo(cont_name, tn, cn, rt, rf, ur, dr)
       }
-    val description = s"""all constraints for tables:
+    val description = s"""All constraints for tables:
          ${names.mkString(",")}}"""
 
     val sql =
@@ -257,7 +273,7 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
     val parser = str("constraint_name") ~ str("table_name") map {
       case constraint_name ~ table_name => CheckConstraintInfo(constraint_name, table_name)
     }
-    val description = s"""all check for tables:
+    val description = s"""All check for tables:
          ${names.mkString(",")}}"""
 
     val sql =
@@ -302,16 +318,16 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
       val checkConstraints = CheckConstraintService(names).execute()
 
       val tables = mergeAdditionalInfo(tablesInfo.map(e => {
-        val (tableName, columns) = e
+        val (tn, columns) = e
 
-        val pkNames = PrimaryKeyService(tableName).execute()
+        val pks = PrimaryKeyService(tn).execute()
 
         val columnDTOs = columns.map(c => {
           ColumnDTO(c.column_name,
-            primary = pkNames.exists(_.pk_name == c.column_name),
+            primary = pks.exists(_.pk_name == c.column_name),
             nullable = c.is_nullable.toBoolean,
             c.data_type,
-            hasSequences = sequences.map(_.name).contains(s"${tableName}_${c.column_name}_seq"),
+            hasSequences = sequences.map(_.name).contains(s"${tn}_${c.column_name}_seq"),
             c.column_default,
             c.character_maximum_length,
             c.character_octet_length,
@@ -321,18 +337,32 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
             c.datetime_precision)
         })
 
-        val uniqueIndexDTOs = UniqueIndexInfoService(tableName).execute().map(toIndex(tableName, _)).
-          map(associateColumnsWithIndexes(_, columnDTOs))
+        val uniqueIndexDTOs = UniqueIndexInfoService(tn).execute().
+          map(toIndex(tn, _)).
+          map(toUniqueIndexes(_, columnDTOs)).
+          sortBy(_.name).wrap
 
-        TableDTO(tableName, columnDTOs, wrap(uniqueIndexDTOs.sortBy(_.name)), None, None)
+        val indexDTOs = IndexInfoService(tn).execute().
+          map(toIndex(tn, _)).
+          map(toIndexes(_, columnDTOs)).
+          sortBy(_.name).wrap
+
+        TableDTO(
+          tn,
+          columnDTOs,
+          uniqueIndexDTOs,
+          indexDTOs,
+          None,
+          None)
       }).toSeq, fkConstraints, checkConstraints)
 
       tables.sortBy(_.name)
     }
   }
 
-  def wrap[T](seq:Seq[T]):Option[Seq[T]]=
-    if (seq.nonEmpty) Some(seq) else None
+  implicit class SeqWrapper[T](seq: Seq[T]){
+    def wrap: Option[Seq[T]] = if (seq.nonEmpty) Some(seq) else None
+  }
 
   def mergeAdditionalInfo(tables: Seq[TableDTO],
                           fkConstraints: Seq[ForeignKeyConstraintInfo],
@@ -358,19 +388,24 @@ case class PGMetadataCollector(schema: String)(implicit connection: Connection, 
         map(ch => CheckDTO(ch.constraint_name))
 
       e.copy(
-        foreignKeys = wrap(producedFk.sortBy(_.name)),
-        checks = wrap(producedChecks.sortBy(_.name))
+        foreignKeys = producedFk.sortBy(_.name).wrap,
+        checks = producedChecks.sortBy(_.name).wrap
       )
     })
   }
 
-  def associateColumnsWithIndexes(idx: UniqueIndex, info: Seq[ColumnDTO]) =
-    UniqueIndexDTO(idx.idxName, idx.columns.map({ clm =>
-      info.find(_.name == clm).get
-    }))
+  def toUniqueIndexes(idx: Index, info: Seq[ColumnDTO]) =
+    UniqueIndexDTO(idx.idxName, associateColumns(idx, info))
 
-  def toIndex(name: String, e: UniqueIndexInfo) = {
-    val seq = UniqueIndexService(name,e.indkey.trim.split(" ").map(_.toInt)).execute()
-    UniqueIndex(e.relname, seq.map(_.name))
+  def toIndexes(idx: Index, info: Seq[ColumnDTO]) =
+    IndexDTO(idx.idxName, associateColumns(idx, info))
+
+  def associateColumns(idx: Index, info: Seq[ColumnDTO]) = idx.columns.map({ clm =>
+    info.find(_.name == clm).get
+  })
+  
+  def toIndex(name: String, e: IndexInfo) = {
+    val seq = TableNamesService(name, e.indkey.trim.split(" ").map(_.toInt)).execute()
+    Index(e.relname, seq.map(_.name))
   }
 }

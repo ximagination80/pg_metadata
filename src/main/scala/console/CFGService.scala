@@ -46,15 +46,11 @@ case class CFGService() {
     }
   }
 
-  def execute(args: Array[String], f: (CFG) => Unit) = {
-    val parsed = parser.parse(args, CFG())
-    parsed match {
-      case Some(cfg) =>
-        f(cfg)
-
+  def execute(args: Array[String], f: (CFG) => Unit) =
+    parser.parse(args, CFG()) match {
+      case Some(cfg) => f(cfg)
       case None => // ignore
     }
-  }
 }
 
 case class CFG(host: String = "localhost",

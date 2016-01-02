@@ -3,6 +3,7 @@ package core
 case class TableDTO(name: String,
                     column: Seq[ColumnDTO],
                     uniqueIndexes: Option[Seq[UniqueIndexDTO]],
+                    indexes: Option[Seq[IndexDTO]],
                     foreignKeys: Option[Seq[ForeignKeyDTO]],
                     checks: Option[Seq[CheckDTO]])
 
@@ -21,6 +22,9 @@ case class ColumnDTO(name: String,
 
 case class UniqueIndexDTO(name: String,
                           columns: Seq[ColumnDTO])
+
+case class IndexDTO(name: String,
+                    columns: Seq[ColumnDTO])
 
 case class ForeignKeyDTO(name: String,
                          column: ColumnDTO,

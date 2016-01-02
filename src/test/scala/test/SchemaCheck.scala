@@ -32,7 +32,7 @@ class SchemaCheck extends FunSuite
 
   availableSchemas.foreach { e =>
     test("[" + e.capitalize + "] TEST ") {
-      connect(e, { implicit connection =>
+      connect(e, { implicit c =>
         val expected = (schema ~> e ~> "expected.json").read
         val actual = PGMetadataCollector(e).collect()
 
