@@ -395,11 +395,11 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
   }
 
   def toCascadeOp(value: String): CascadeOp = (value: @unchecked) match {
-    case "NO ACTION" => NO_ACTION(value)
-    case "SET DEFAULT" => SET_DEFAULT(value)
-    case "SET NULL" => SET_NULL(value)
-    case "CASCADE" => CASCADE(value)
-    case "RESTRICT" => RESTRICT(value)
+    case "NO ACTION" => NoAction(value)
+    case "SET DEFAULT" => SetDefault(value)
+    case "SET NULL" => SetNull(value)
+    case "CASCADE" => Cascade(value)
+    case "RESTRICT" => Restrict(value)
   }
 
   def toUniqueIndexes(idx: Index, info: Seq[ColumnDTO]) =

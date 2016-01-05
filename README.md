@@ -70,11 +70,11 @@ case class CheckDTO(name: String)
 sealed trait CascadeOp {
   def action: String
 }
-case class NO_ACTION(action:String) extends CascadeOp
-case class SET_DEFAULT(action:String) extends CascadeOp
-case class SET_NULL(action:String) extends CascadeOp
-case class RESTRICT(action:String) extends CascadeOp
-case class CASCADE(action:String) extends CascadeOp
+case class NoAction(action:String) extends CascadeOp
+case class SetDefault(action:String) extends CascadeOp
+case class SetNull(action:String) extends CascadeOp
+case class Restrict(action:String) extends CascadeOp
+case class Cascade(action:String) extends CascadeOp
 
 ```
 
