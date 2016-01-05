@@ -3,7 +3,6 @@ package test
 import java.io.StringReader
 import java.sql.{Connection, DriverManager}
 import java.util.Properties
-import Ops._
 
 trait PGConnectionUtils extends TestUtils{
   Class.forName(driver)

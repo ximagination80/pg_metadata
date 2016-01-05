@@ -227,8 +227,12 @@
           "character_maximum_length":6,
           "character_octet_length":24
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       },
       {
         "name":"datsrcln_ndb_no_fkey",
@@ -453,8 +457,12 @@
           "character_maximum_length":3,
           "character_octet_length":12
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       },
       {
         "name":"datsrcln_ndb_no_fkey",
@@ -679,8 +687,12 @@
           "character_maximum_length":5,
           "character_octet_length":20
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       },
       {
         "name":"datsrcln_ndb_no_fkey",
@@ -905,8 +917,12 @@
           "character_maximum_length":3,
           "character_octet_length":12
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       },
       {
         "name":"datsrcln_ndb_no_fkey",
@@ -1131,8 +1147,12 @@
           "character_maximum_length":5,
           "character_octet_length":20
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       }
     ]
   },
@@ -1363,8 +1383,12 @@
           "character_maximum_length":4,
           "character_octet_length":16
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       }
     ]
   },
@@ -1604,8 +1628,12 @@
           "character_maximum_length":5,
           "character_octet_length":20
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       },
       {
         "name":"footnote_nutr_no_fkey",
@@ -1685,8 +1713,12 @@
           "character_maximum_length":3,
           "character_octet_length":12
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       }
     ]
   },
@@ -1932,8 +1964,12 @@
           "hasSequences":false,
           "character_octet_length":1073741824
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       },
       {
         "name":"nut_data_ndb_no_fkey",
@@ -2097,8 +2133,12 @@
           "character_maximum_length":5,
           "character_octet_length":20
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       },
       {
         "name":"nut_data_nutr_no_fkey",
@@ -2178,8 +2218,12 @@
           "character_maximum_length":3,
           "character_octet_length":12
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       },
       {
         "name":"nut_data_src_cd_fkey",
@@ -2226,8 +2270,12 @@
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       }
     ]
   },
@@ -2542,8 +2590,12 @@
           "character_maximum_length":5,
           "character_octet_length":20
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       }
     ]
   }

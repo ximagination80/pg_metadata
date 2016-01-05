@@ -81,8 +81,12 @@
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "action_on_update":"SET NULL",
-        "action_on_delete":"RESTRICT"
+        "action_on_update":{
+          "action":"SET NULL"
+        },
+        "action_on_delete":{
+          "action":"RESTRICT"
+        }
       }
     ]
   },
@@ -314,8 +318,12 @@
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "action_on_update":"SET NULL",
-        "action_on_delete":"CASCADE"
+        "action_on_update":{
+          "action":"SET NULL"
+        },
+        "action_on_delete":{
+          "action":"CASCADE"
+        }
       },
       {
         "name":"fk_t_driver_id",
@@ -453,8 +461,12 @@
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"SET DEFAULT"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"SET DEFAULT"
+        }
       }
     ]
   }

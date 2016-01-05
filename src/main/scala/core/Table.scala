@@ -30,7 +30,16 @@ case class ForeignKeyDTO(name: String,
                          column: ColumnDTO,
                          references_to_table: TableDTO,
                          references_to_column: ColumnDTO,
-                         action_on_update: String,
-                         action_on_delete: String)
+                         action_on_update: CascadeOp,
+                         action_on_delete: CascadeOp)
 
 case class CheckDTO(name: String)
+
+sealed trait CascadeOp {
+  def action: String
+}
+case class NO_ACTION(action:String) extends CascadeOp
+case class SET_DEFAULT(action:String) extends CascadeOp
+case class SET_NULL(action:String) extends CascadeOp
+case class RESTRICT(action:String) extends CascadeOp
+case class CASCADE(action:String) extends CascadeOp

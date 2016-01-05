@@ -260,8 +260,12 @@
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       }
     ],
     "checks":[
@@ -467,8 +471,12 @@
           "character_maximum_length":3,
           "character_octet_length":12
         },
-        "action_on_update":"NO ACTION",
-        "action_on_delete":"NO ACTION"
+        "action_on_update":{
+          "action":"NO ACTION"
+        },
+        "action_on_delete":{
+          "action":"NO ACTION"
+        }
       }
     ]
   }

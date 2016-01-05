@@ -7,17 +7,19 @@ import net.liftweb.json.DefaultFormats
 import net.liftweb.json.Extraction._
 import net.liftweb.json.JsonAST._
 import org.flywaydb.core.Flyway
-import org.scalatest.FunSuite
-import Ops._
+import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 class SchemaCheck extends FunSuite
       with PGConnectionUtils
-      with TestUtils {
+      with TestUtils with BeforeAndAfterAll {
 
   implicit val settings = AppLogger(debug = false)
   implicit val formats = DefaultFormats
 
   val availableSchemas = schema.files.map(_.getName).sorted
+
+  override protected def beforeAll() =
+    errors.files.foreach(_.remove())
 
   availableSchemas.foreach { e =>
     test("[" + e.capitalize + "] MIGRATION ") {

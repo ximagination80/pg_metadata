@@ -122,7 +122,7 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
       FROM   pg_index i
       JOIN   pg_attribute a ON a.attrelid = i.indrelid
                            AND a.attnum = ANY(i.indkey)
-      WHERE  i.indrelid = '$tableName'::regclass
+      WHERE  i.indrelid = '$schema.$tableName'::regclass
       AND    i.indisprimary;
       """
   }
@@ -380,8 +380,8 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
           e.column.find(_.name == fk.column_name).get,
           toTable,
           toTable.column.find(_.name == fk.references_field).get,
-          fk.update_rule,
-          fk.delete_rule)
+          toCascadeOp(fk.update_rule),
+          toCascadeOp(fk.delete_rule))
       })
 
       val producedChecks= checks.getOrElse(e.name, Nil).
@@ -392,6 +392,14 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
         checks = producedChecks.sortBy(_.name).wrap
       )
     })
+  }
+
+  def toCascadeOp(value: String): CascadeOp = (value: @unchecked) match {
+    case "NO ACTION" => NO_ACTION(value)
+    case "SET DEFAULT" => SET_DEFAULT(value)
+    case "SET NULL" => SET_NULL(value)
+    case "CASCADE" => CASCADE(value)
+    case "RESTRICT" => RESTRICT(value)
   }
 
   def toUniqueIndexes(idx: Index, info: Seq[ColumnDTO]) =
