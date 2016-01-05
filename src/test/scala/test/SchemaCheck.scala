@@ -18,8 +18,10 @@ class SchemaCheck extends FunSuite
 
   val availableSchemas = schema.files.map(_.getName).sorted
 
-  override protected def beforeAll() =
+  override protected def beforeAll() ={
+    errors.mkdirs()
     errors.files.foreach(_.remove())
+  }
 
   availableSchemas.foreach { e =>
     test("[" + e.capitalize + "] MIGRATION ") {
