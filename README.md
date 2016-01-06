@@ -42,15 +42,35 @@ case class TableDTO(name: String,
 case class ColumnDTO(name: String,
                      primary: Boolean,
                      nullable: Boolean,
-                     dbType: String,
+                     columnType: ColumnType,
                      hasSequences: Boolean,
-                     column_default: Option[String],
-                     character_maximum_length: Option[Int],
-                     character_octet_length: Option[Int],
-                     numeric_precision: Option[Int],
-                     numeric_precision_radix: Option[Int],
-                     numeric_scale: Option[Int],
-                     datetime_precision: Option[Int])
+                     column_default: Option[String])
+
+sealed trait ColumnType {
+  def dbType: String
+}
+
+case class IntLike(dbType: String,
+                   numeric_precision: Option[Int],
+                   numeric_precision_radix: Option[Int],
+                   numeric_scale: Option[Int]) extends ColumnType
+
+case class DoubleLike(dbType: String,
+                      numeric_precision: Option[Int],
+                      numeric_precision_radix: Option[Int],
+                      numeric_scale: Option[Int]) extends ColumnType
+
+case class StringLike(dbType: String,
+                      character_maximum_length: Option[Int]) extends ColumnType
+
+case class TimeLike(dbType: String,
+                    datetime_precision: Option[Int]) extends ColumnType
+
+case class PGUuid(dbType: String) extends ColumnType
+case class PGBoolean(dbType: String) extends ColumnType
+case class PGByteArray(dbType: String) extends ColumnType
+case class Other(dbType: String) extends ColumnType
+
 
 case class UniqueIndexDTO(name: String,
                           columns: Seq[ColumnDTO])
@@ -67,7 +87,7 @@ case class ForeignKeyDTO(name: String,
 
 case class CheckDTO(name: String)
 
-sealed trait CascadeOp {
+sealed abstract class CascadeOp {
   def action: String
 }
 case class NoAction(action:String) extends CascadeOp

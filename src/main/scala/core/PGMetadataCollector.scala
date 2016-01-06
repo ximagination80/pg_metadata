@@ -5,7 +5,7 @@ import java.sql.Connection
 import anorm.SqlParser._
 import anorm._
 
-case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logger) {
+case class PGMetadataCollector(schema: String)(implicit c: Connection, logger: Logger = EmptyLogger) {
 
   implicit val columnToYesNoBoolean: Column[YesNoBoolean] = Column.nonNull[YesNoBoolean] { (value, meta) =>
     (value: @unchecked) match {
@@ -24,8 +24,8 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
     def sql: String
 
     def execute(): Seq[Content] = {
-      stg.log(description)
-      stg.log(s"SQL: $sql")
+      logger.log(description)
+      logger.log(s"SQL: $sql")
       SQL(sql).as(parser.*)
     }
   }
@@ -301,15 +301,15 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
   }
 
   def collect():Seq[TableDTO] = {
-    stg.log("Reading schema...")
+    logger.log("Reading schema...")
     
     val tableNames = TablesService().execute()
     if (tableNames.isEmpty) {
-      stg.log(s"Tables not found")
+      logger.log(s"Tables not found")
 
       Nil
     } else {
-      stg.log(s"Found ${tableNames.length} tables.\n")
+      logger.log(s"Found ${tableNames.length} tables.")
 
       val names = tableNames.map(_.name)
       val tablesInfo = TablesInfoService(names).execute().groupBy(_.table_name)
@@ -322,19 +322,13 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
 
         val pks = PrimaryKeyService(tn).execute()
 
-        val columnDTOs = columns.map(c => {
+        val columnDTOs = columns.map({ c =>
           ColumnDTO(c.column_name,
             primary = pks.exists(_.pk_name == c.column_name),
             nullable = c.is_nullable.toBoolean,
-            c.data_type,
+            getColumnType(c),
             hasSequences = sequences.map(_.name).contains(s"${tn}_${c.column_name}_seq"),
-            c.column_default,
-            c.character_maximum_length,
-            c.character_octet_length,
-            c.numeric_precision,
-            c.numeric_precision_radix,
-            c.numeric_scale,
-            c.datetime_precision)
+            c.column_default)
         })
 
         val uniqueIndexDTOs = UniqueIndexInfoService(tn).execute().
@@ -360,6 +354,29 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
     }
   }
 
+  def getColumnType(c: TablesInfoService#Content): ColumnType = {
+    val `type` = c.data_type
+    `type` match {
+      case "smallint" | "integer" | "bigint" =>
+        IntLike(`type`, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale)
+
+      case "numeric" | "real" | "double precision" =>
+        DoubleLike(`type`, c.numeric_precision, c.numeric_precision_radix, c.numeric_scale)
+
+      case "character varying" | "character" | "text" =>
+        StringLike(`type`, c.character_maximum_length)
+
+      case "timestamp without time zone" | "time without time zone" | "date" | "interval" |
+           "timestamp with time zone" | "time with time zone"=>
+        TimeLike(`type`, c.datetime_precision)
+
+      case "bytea" => PGByteArray(`type`)
+      case "boolean" => PGBoolean(`type`)
+      case "uuid" => PGUuid(`type`)
+      case _ => Other(`type`)
+    }
+  }
+
   implicit class SeqWrapper[T](seq: Seq[T]){
     def wrap: Option[Seq[T]] = if (seq.nonEmpty) Some(seq) else None
   }
@@ -370,8 +387,8 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
     val fk = fkConstraints.groupBy(_.table_name)
     val checks = checkConstraints.filterNot(_.constraint_name.contains("not_null")).groupBy(_.table_name)
 
-    tables.map(e => {
-      val producedFk = fk.getOrElse(e.name, Nil).map(fk => {
+    tables.map({ e =>
+      val producedFk = fk.getOrElse(e.name, Nil).map({ fk =>
         val toTable = tables.find(_.name == fk.references_table).
           getOrElse(throw new RuntimeException(s"Unable to find table by key ${fk.references_table}"))
 
@@ -384,7 +401,7 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, stg: Logg
           toCascadeOp(fk.delete_rule))
       })
 
-      val producedChecks= checks.getOrElse(e.name, Nil).
+      val producedChecks = checks.getOrElse(e.name, Nil).
         map(ch => CheckDTO(ch.constraint_name))
 
       e.copy(

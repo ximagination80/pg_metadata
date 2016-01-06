@@ -40,5 +40,3 @@ coverageMinimum := 95
 coverageFailOnMinimum := true
 
 parallelExecution in Test := false
-
-coverageExcludedPackages := "console.*;"

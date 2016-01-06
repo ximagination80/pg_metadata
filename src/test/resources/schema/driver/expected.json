@@ -6,30 +6,35 @@
         "name":"id",
         "primary":true,
         "nullable":false,
-        "dbType":"bigint",
+        "columnType":{
+          "dbType":"bigint",
+          "numeric_precision":64,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
         "hasSequences":true,
-        "column_default":"nextval('t_bus_id_seq'::regclass)",
-        "numeric_precision":64,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "column_default":"nextval('t_bus_id_seq'::regclass)"
       },
       {
         "name":"name",
         "primary":false,
         "nullable":true,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"bus_type_id",
         "primary":false,
         "nullable":false,
-        "dbType":"bigint",
-        "hasSequences":false,
-        "numeric_precision":64,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"bigint",
+          "numeric_precision":64,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       }
     ],
     "foreignKeys":[
@@ -39,11 +44,13 @@
           "name":"bus_type_id",
           "primary":false,
           "nullable":false,
-          "dbType":"bigint",
-          "hasSequences":false,
-          "numeric_precision":64,
-          "numeric_precision_radix":2,
-          "numeric_scale":0
+          "columnType":{
+            "dbType":"bigint",
+            "numeric_precision":64,
+            "numeric_precision_radix":2,
+            "numeric_scale":0
+          },
+          "hasSequences":false
         },
         "references_to_table":{
           "name":"t_bus_type",
@@ -52,21 +59,24 @@
               "name":"id",
               "primary":true,
               "nullable":false,
-              "dbType":"bigint",
+              "columnType":{
+                "dbType":"bigint",
+                "numeric_precision":64,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
               "hasSequences":true,
-              "column_default":"nextval('t_bus_type_id_seq'::regclass)",
-              "numeric_precision":64,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "column_default":"nextval('t_bus_type_id_seq'::regclass)"
             },
             {
               "name":"name",
               "primary":false,
               "nullable":false,
-              "dbType":"text",
+              "columnType":{
+                "dbType":"text"
+              },
               "hasSequences":false,
-              "column_default":"''::text",
-              "character_octet_length":1073741824
+              "column_default":"''::text"
             }
           ]
         },
@@ -74,12 +84,14 @@
           "name":"id",
           "primary":true,
           "nullable":false,
-          "dbType":"bigint",
+          "columnType":{
+            "dbType":"bigint",
+            "numeric_precision":64,
+            "numeric_precision_radix":2,
+            "numeric_scale":0
+          },
           "hasSequences":true,
-          "column_default":"nextval('t_bus_type_id_seq'::regclass)",
-          "numeric_precision":64,
-          "numeric_precision_radix":2,
-          "numeric_scale":0
+          "column_default":"nextval('t_bus_type_id_seq'::regclass)"
         },
         "action_on_update":{
           "action":"SET NULL"
@@ -97,21 +109,24 @@
         "name":"id",
         "primary":true,
         "nullable":false,
-        "dbType":"bigint",
+        "columnType":{
+          "dbType":"bigint",
+          "numeric_precision":64,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
         "hasSequences":true,
-        "column_default":"nextval('t_bus_type_id_seq'::regclass)",
-        "numeric_precision":64,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "column_default":"nextval('t_bus_type_id_seq'::regclass)"
       },
       {
         "name":"name",
         "primary":false,
         "nullable":false,
-        "dbType":"text",
+        "columnType":{
+          "dbType":"text"
+        },
         "hasSequences":false,
-        "column_default":"''::text",
-        "character_octet_length":1073741824
+        "column_default":"''::text"
       }
     ]
   },
@@ -122,91 +137,107 @@
         "name":"id",
         "primary":true,
         "nullable":false,
-        "dbType":"integer",
+        "columnType":{
+          "dbType":"integer",
+          "numeric_precision":32,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
         "hasSequences":true,
-        "column_default":"nextval('t_driver_id_seq'::regclass)",
-        "numeric_precision":32,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "column_default":"nextval('t_driver_id_seq'::regclass)"
       },
       {
         "name":"name",
         "primary":false,
         "nullable":false,
-        "dbType":"character varying",
-        "hasSequences":false,
-        "character_maximum_length":64,
-        "character_octet_length":256
+        "columnType":{
+          "dbType":"character varying",
+          "character_maximum_length":64
+        },
+        "hasSequences":false
       },
       {
         "name":"email",
         "primary":false,
         "nullable":false,
-        "dbType":"character varying",
-        "hasSequences":false,
-        "character_maximum_length":320,
-        "character_octet_length":1280
+        "columnType":{
+          "dbType":"character varying",
+          "character_maximum_length":320
+        },
+        "hasSequences":false
       },
       {
         "name":"age",
         "primary":false,
         "nullable":true,
-        "dbType":"smallint",
-        "hasSequences":false,
-        "numeric_precision":16,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"smallint",
+          "numeric_precision":16,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"date_of_birth",
         "primary":false,
         "nullable":false,
-        "dbType":"timestamp without time zone",
-        "hasSequences":false,
-        "datetime_precision":6
+        "columnType":{
+          "dbType":"timestamp without time zone",
+          "datetime_precision":6
+        },
+        "hasSequences":false
       },
       {
         "name":"salary",
         "primary":false,
         "nullable":true,
-        "dbType":"numeric",
+        "columnType":{
+          "dbType":"numeric",
+          "numeric_precision":10,
+          "numeric_precision_radix":10,
+          "numeric_scale":2
+        },
         "hasSequences":false,
-        "column_default":"(1000)::numeric",
-        "numeric_precision":10,
-        "numeric_precision_radix":10,
-        "numeric_scale":2
+        "column_default":"(1000)::numeric"
       },
       {
         "name":"description",
         "primary":false,
         "nullable":true,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"sex",
         "primary":false,
         "nullable":false,
-        "dbType":"character",
-        "hasSequences":false,
-        "character_maximum_length":1,
-        "character_octet_length":4
+        "columnType":{
+          "dbType":"character",
+          "character_maximum_length":1
+        },
+        "hasSequences":false
       },
       {
         "name":"created_date",
         "primary":false,
         "nullable":false,
-        "dbType":"timestamp without time zone",
+        "columnType":{
+          "dbType":"timestamp without time zone",
+          "datetime_precision":6
+        },
         "hasSequences":false,
-        "column_default":"now()",
-        "datetime_precision":6
+        "column_default":"now()"
       },
       {
         "name":"active",
         "primary":false,
         "nullable":true,
-        "dbType":"boolean",
+        "columnType":{
+          "dbType":"boolean"
+        },
         "hasSequences":false,
         "column_default":"true"
       }
@@ -219,10 +250,11 @@
             "name":"email",
             "primary":false,
             "nullable":false,
-            "dbType":"character varying",
-            "hasSequences":false,
-            "character_maximum_length":320,
-            "character_octet_length":1280
+            "columnType":{
+              "dbType":"character varying",
+              "character_maximum_length":320
+            },
+            "hasSequences":false
           }
         ]
       }
@@ -243,21 +275,25 @@
         "name":"t_driver_id",
         "primary":true,
         "nullable":false,
-        "dbType":"bigint",
-        "hasSequences":false,
-        "numeric_precision":64,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"bigint",
+          "numeric_precision":64,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"t_bus_id",
         "primary":true,
         "nullable":false,
-        "dbType":"bigint",
-        "hasSequences":false,
-        "numeric_precision":64,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"bigint",
+          "numeric_precision":64,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       }
     ],
     "foreignKeys":[
@@ -267,11 +303,13 @@
           "name":"t_bus_id",
           "primary":true,
           "nullable":false,
-          "dbType":"bigint",
-          "hasSequences":false,
-          "numeric_precision":64,
-          "numeric_precision_radix":2,
-          "numeric_scale":0
+          "columnType":{
+            "dbType":"bigint",
+            "numeric_precision":64,
+            "numeric_precision_radix":2,
+            "numeric_scale":0
+          },
+          "hasSequences":false
         },
         "references_to_table":{
           "name":"t_bus",
@@ -280,30 +318,35 @@
               "name":"id",
               "primary":true,
               "nullable":false,
-              "dbType":"bigint",
+              "columnType":{
+                "dbType":"bigint",
+                "numeric_precision":64,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
               "hasSequences":true,
-              "column_default":"nextval('t_bus_id_seq'::regclass)",
-              "numeric_precision":64,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "column_default":"nextval('t_bus_id_seq'::regclass)"
             },
             {
               "name":"name",
               "primary":false,
               "nullable":true,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"bus_type_id",
               "primary":false,
               "nullable":false,
-              "dbType":"bigint",
-              "hasSequences":false,
-              "numeric_precision":64,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "columnType":{
+                "dbType":"bigint",
+                "numeric_precision":64,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
+              "hasSequences":false
             }
           ]
         },
@@ -311,12 +354,14 @@
           "name":"id",
           "primary":true,
           "nullable":false,
-          "dbType":"bigint",
+          "columnType":{
+            "dbType":"bigint",
+            "numeric_precision":64,
+            "numeric_precision_radix":2,
+            "numeric_scale":0
+          },
           "hasSequences":true,
-          "column_default":"nextval('t_bus_id_seq'::regclass)",
-          "numeric_precision":64,
-          "numeric_precision_radix":2,
-          "numeric_scale":0
+          "column_default":"nextval('t_bus_id_seq'::regclass)"
         },
         "action_on_update":{
           "action":"SET NULL"
@@ -331,11 +376,13 @@
           "name":"t_driver_id",
           "primary":true,
           "nullable":false,
-          "dbType":"bigint",
-          "hasSequences":false,
-          "numeric_precision":64,
-          "numeric_precision_radix":2,
-          "numeric_scale":0
+          "columnType":{
+            "dbType":"bigint",
+            "numeric_precision":64,
+            "numeric_precision_radix":2,
+            "numeric_scale":0
+          },
+          "hasSequences":false
         },
         "references_to_table":{
           "name":"t_driver",
@@ -344,91 +391,107 @@
               "name":"id",
               "primary":true,
               "nullable":false,
-              "dbType":"integer",
+              "columnType":{
+                "dbType":"integer",
+                "numeric_precision":32,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
               "hasSequences":true,
-              "column_default":"nextval('t_driver_id_seq'::regclass)",
-              "numeric_precision":32,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "column_default":"nextval('t_driver_id_seq'::regclass)"
             },
             {
               "name":"name",
               "primary":false,
               "nullable":false,
-              "dbType":"character varying",
-              "hasSequences":false,
-              "character_maximum_length":64,
-              "character_octet_length":256
+              "columnType":{
+                "dbType":"character varying",
+                "character_maximum_length":64
+              },
+              "hasSequences":false
             },
             {
               "name":"email",
               "primary":false,
               "nullable":false,
-              "dbType":"character varying",
-              "hasSequences":false,
-              "character_maximum_length":320,
-              "character_octet_length":1280
+              "columnType":{
+                "dbType":"character varying",
+                "character_maximum_length":320
+              },
+              "hasSequences":false
             },
             {
               "name":"age",
               "primary":false,
               "nullable":true,
-              "dbType":"smallint",
-              "hasSequences":false,
-              "numeric_precision":16,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "columnType":{
+                "dbType":"smallint",
+                "numeric_precision":16,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
+              "hasSequences":false
             },
             {
               "name":"date_of_birth",
               "primary":false,
               "nullable":false,
-              "dbType":"timestamp without time zone",
-              "hasSequences":false,
-              "datetime_precision":6
+              "columnType":{
+                "dbType":"timestamp without time zone",
+                "datetime_precision":6
+              },
+              "hasSequences":false
             },
             {
               "name":"salary",
               "primary":false,
               "nullable":true,
-              "dbType":"numeric",
+              "columnType":{
+                "dbType":"numeric",
+                "numeric_precision":10,
+                "numeric_precision_radix":10,
+                "numeric_scale":2
+              },
               "hasSequences":false,
-              "column_default":"(1000)::numeric",
-              "numeric_precision":10,
-              "numeric_precision_radix":10,
-              "numeric_scale":2
+              "column_default":"(1000)::numeric"
             },
             {
               "name":"description",
               "primary":false,
               "nullable":true,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"sex",
               "primary":false,
               "nullable":false,
-              "dbType":"character",
-              "hasSequences":false,
-              "character_maximum_length":1,
-              "character_octet_length":4
+              "columnType":{
+                "dbType":"character",
+                "character_maximum_length":1
+              },
+              "hasSequences":false
             },
             {
               "name":"created_date",
               "primary":false,
               "nullable":false,
-              "dbType":"timestamp without time zone",
+              "columnType":{
+                "dbType":"timestamp without time zone",
+                "datetime_precision":6
+              },
               "hasSequences":false,
-              "column_default":"now()",
-              "datetime_precision":6
+              "column_default":"now()"
             },
             {
               "name":"active",
               "primary":false,
               "nullable":true,
-              "dbType":"boolean",
+              "columnType":{
+                "dbType":"boolean"
+              },
               "hasSequences":false,
               "column_default":"true"
             }
@@ -441,10 +504,11 @@
                   "name":"email",
                   "primary":false,
                   "nullable":false,
-                  "dbType":"character varying",
-                  "hasSequences":false,
-                  "character_maximum_length":320,
-                  "character_octet_length":1280
+                  "columnType":{
+                    "dbType":"character varying",
+                    "character_maximum_length":320
+                  },
+                  "hasSequences":false
                 }
               ]
             }
@@ -454,12 +518,14 @@
           "name":"id",
           "primary":true,
           "nullable":false,
-          "dbType":"integer",
+          "columnType":{
+            "dbType":"integer",
+            "numeric_precision":32,
+            "numeric_precision_radix":2,
+            "numeric_scale":0
+          },
           "hasSequences":true,
-          "column_default":"nextval('t_driver_id_seq'::regclass)",
-          "numeric_precision":32,
-          "numeric_precision_radix":2,
-          "numeric_scale":0
+          "column_default":"nextval('t_driver_id_seq'::regclass)"
         },
         "action_on_update":{
           "action":"NO ACTION"

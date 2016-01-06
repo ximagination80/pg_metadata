@@ -6,46 +6,53 @@
         "name":"id",
         "primary":true,
         "nullable":false,
-        "dbType":"integer",
-        "hasSequences":false,
-        "numeric_precision":32,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"integer",
+          "numeric_precision":32,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"name",
         "primary":false,
         "nullable":false,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"countrycode",
         "primary":false,
         "nullable":false,
-        "dbType":"character",
-        "hasSequences":false,
-        "character_maximum_length":3,
-        "character_octet_length":12
+        "columnType":{
+          "dbType":"character",
+          "character_maximum_length":3
+        },
+        "hasSequences":false
       },
       {
         "name":"district",
         "primary":false,
         "nullable":false,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"population",
         "primary":false,
         "nullable":false,
-        "dbType":"integer",
-        "hasSequences":false,
-        "numeric_precision":32,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"integer",
+          "numeric_precision":32,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       }
     ]
   },
@@ -56,135 +63,157 @@
         "name":"code",
         "primary":true,
         "nullable":false,
-        "dbType":"character",
-        "hasSequences":false,
-        "character_maximum_length":3,
-        "character_octet_length":12
+        "columnType":{
+          "dbType":"character",
+          "character_maximum_length":3
+        },
+        "hasSequences":false
       },
       {
         "name":"name",
         "primary":false,
         "nullable":false,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"continent",
         "primary":false,
         "nullable":false,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"region",
         "primary":false,
         "nullable":false,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"surfacearea",
         "primary":false,
         "nullable":false,
-        "dbType":"real",
-        "hasSequences":false,
-        "numeric_precision":24,
-        "numeric_precision_radix":2
+        "columnType":{
+          "dbType":"real",
+          "numeric_precision":24,
+          "numeric_precision_radix":2
+        },
+        "hasSequences":false
       },
       {
         "name":"indepyear",
         "primary":false,
         "nullable":true,
-        "dbType":"smallint",
-        "hasSequences":false,
-        "numeric_precision":16,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"smallint",
+          "numeric_precision":16,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"population",
         "primary":false,
         "nullable":false,
-        "dbType":"integer",
-        "hasSequences":false,
-        "numeric_precision":32,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"integer",
+          "numeric_precision":32,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"lifeexpectancy",
         "primary":false,
         "nullable":true,
-        "dbType":"real",
-        "hasSequences":false,
-        "numeric_precision":24,
-        "numeric_precision_radix":2
+        "columnType":{
+          "dbType":"real",
+          "numeric_precision":24,
+          "numeric_precision_radix":2
+        },
+        "hasSequences":false
       },
       {
         "name":"gnp",
         "primary":false,
         "nullable":true,
-        "dbType":"numeric",
-        "hasSequences":false,
-        "numeric_precision":10,
-        "numeric_precision_radix":10,
-        "numeric_scale":2
+        "columnType":{
+          "dbType":"numeric",
+          "numeric_precision":10,
+          "numeric_precision_radix":10,
+          "numeric_scale":2
+        },
+        "hasSequences":false
       },
       {
         "name":"gnpold",
         "primary":false,
         "nullable":true,
-        "dbType":"numeric",
-        "hasSequences":false,
-        "numeric_precision":10,
-        "numeric_precision_radix":10,
-        "numeric_scale":2
+        "columnType":{
+          "dbType":"numeric",
+          "numeric_precision":10,
+          "numeric_precision_radix":10,
+          "numeric_scale":2
+        },
+        "hasSequences":false
       },
       {
         "name":"localname",
         "primary":false,
         "nullable":false,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"governmentform",
         "primary":false,
         "nullable":false,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"headofstate",
         "primary":false,
         "nullable":true,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"capital",
         "primary":false,
         "nullable":true,
-        "dbType":"integer",
-        "hasSequences":false,
-        "numeric_precision":32,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"integer",
+          "numeric_precision":32,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"code2",
         "primary":false,
         "nullable":false,
-        "dbType":"character",
-        "hasSequences":false,
-        "character_maximum_length":2,
-        "character_octet_length":8
+        "columnType":{
+          "dbType":"character",
+          "character_maximum_length":2
+        },
+        "hasSequences":false
       }
     ],
     "foreignKeys":[
@@ -194,11 +223,13 @@
           "name":"capital",
           "primary":false,
           "nullable":true,
-          "dbType":"integer",
-          "hasSequences":false,
-          "numeric_precision":32,
-          "numeric_precision_radix":2,
-          "numeric_scale":0
+          "columnType":{
+            "dbType":"integer",
+            "numeric_precision":32,
+            "numeric_precision_radix":2,
+            "numeric_scale":0
+          },
+          "hasSequences":false
         },
         "references_to_table":{
           "name":"city",
@@ -207,46 +238,53 @@
               "name":"id",
               "primary":true,
               "nullable":false,
-              "dbType":"integer",
-              "hasSequences":false,
-              "numeric_precision":32,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "columnType":{
+                "dbType":"integer",
+                "numeric_precision":32,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
+              "hasSequences":false
             },
             {
               "name":"name",
               "primary":false,
               "nullable":false,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"countrycode",
               "primary":false,
               "nullable":false,
-              "dbType":"character",
-              "hasSequences":false,
-              "character_maximum_length":3,
-              "character_octet_length":12
+              "columnType":{
+                "dbType":"character",
+                "character_maximum_length":3
+              },
+              "hasSequences":false
             },
             {
               "name":"district",
               "primary":false,
               "nullable":false,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"population",
               "primary":false,
               "nullable":false,
-              "dbType":"integer",
-              "hasSequences":false,
-              "numeric_precision":32,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "columnType":{
+                "dbType":"integer",
+                "numeric_precision":32,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
+              "hasSequences":false
             }
           ]
         },
@@ -254,11 +292,13 @@
           "name":"id",
           "primary":true,
           "nullable":false,
-          "dbType":"integer",
-          "hasSequences":false,
-          "numeric_precision":32,
-          "numeric_precision_radix":2,
-          "numeric_scale":0
+          "columnType":{
+            "dbType":"integer",
+            "numeric_precision":32,
+            "numeric_precision_radix":2,
+            "numeric_scale":0
+          },
+          "hasSequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -281,34 +321,40 @@
         "name":"countrycode",
         "primary":true,
         "nullable":false,
-        "dbType":"character",
-        "hasSequences":false,
-        "character_maximum_length":3,
-        "character_octet_length":12
+        "columnType":{
+          "dbType":"character",
+          "character_maximum_length":3
+        },
+        "hasSequences":false
       },
       {
         "name":"language",
         "primary":true,
         "nullable":false,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"isofficial",
         "primary":false,
         "nullable":false,
-        "dbType":"boolean",
+        "columnType":{
+          "dbType":"boolean"
+        },
         "hasSequences":false
       },
       {
         "name":"percentage",
         "primary":false,
         "nullable":false,
-        "dbType":"real",
-        "hasSequences":false,
-        "numeric_precision":24,
-        "numeric_precision_radix":2
+        "columnType":{
+          "dbType":"real",
+          "numeric_precision":24,
+          "numeric_precision_radix":2
+        },
+        "hasSequences":false
       }
     ],
     "foreignKeys":[
@@ -318,10 +364,11 @@
           "name":"countrycode",
           "primary":true,
           "nullable":false,
-          "dbType":"character",
-          "hasSequences":false,
-          "character_maximum_length":3,
-          "character_octet_length":12
+          "columnType":{
+            "dbType":"character",
+            "character_maximum_length":3
+          },
+          "hasSequences":false
         },
         "references_to_table":{
           "name":"country",
@@ -330,135 +377,157 @@
               "name":"code",
               "primary":true,
               "nullable":false,
-              "dbType":"character",
-              "hasSequences":false,
-              "character_maximum_length":3,
-              "character_octet_length":12
+              "columnType":{
+                "dbType":"character",
+                "character_maximum_length":3
+              },
+              "hasSequences":false
             },
             {
               "name":"name",
               "primary":false,
               "nullable":false,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"continent",
               "primary":false,
               "nullable":false,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"region",
               "primary":false,
               "nullable":false,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"surfacearea",
               "primary":false,
               "nullable":false,
-              "dbType":"real",
-              "hasSequences":false,
-              "numeric_precision":24,
-              "numeric_precision_radix":2
+              "columnType":{
+                "dbType":"real",
+                "numeric_precision":24,
+                "numeric_precision_radix":2
+              },
+              "hasSequences":false
             },
             {
               "name":"indepyear",
               "primary":false,
               "nullable":true,
-              "dbType":"smallint",
-              "hasSequences":false,
-              "numeric_precision":16,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "columnType":{
+                "dbType":"smallint",
+                "numeric_precision":16,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
+              "hasSequences":false
             },
             {
               "name":"population",
               "primary":false,
               "nullable":false,
-              "dbType":"integer",
-              "hasSequences":false,
-              "numeric_precision":32,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "columnType":{
+                "dbType":"integer",
+                "numeric_precision":32,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
+              "hasSequences":false
             },
             {
               "name":"lifeexpectancy",
               "primary":false,
               "nullable":true,
-              "dbType":"real",
-              "hasSequences":false,
-              "numeric_precision":24,
-              "numeric_precision_radix":2
+              "columnType":{
+                "dbType":"real",
+                "numeric_precision":24,
+                "numeric_precision_radix":2
+              },
+              "hasSequences":false
             },
             {
               "name":"gnp",
               "primary":false,
               "nullable":true,
-              "dbType":"numeric",
-              "hasSequences":false,
-              "numeric_precision":10,
-              "numeric_precision_radix":10,
-              "numeric_scale":2
+              "columnType":{
+                "dbType":"numeric",
+                "numeric_precision":10,
+                "numeric_precision_radix":10,
+                "numeric_scale":2
+              },
+              "hasSequences":false
             },
             {
               "name":"gnpold",
               "primary":false,
               "nullable":true,
-              "dbType":"numeric",
-              "hasSequences":false,
-              "numeric_precision":10,
-              "numeric_precision_radix":10,
-              "numeric_scale":2
+              "columnType":{
+                "dbType":"numeric",
+                "numeric_precision":10,
+                "numeric_precision_radix":10,
+                "numeric_scale":2
+              },
+              "hasSequences":false
             },
             {
               "name":"localname",
               "primary":false,
               "nullable":false,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"governmentform",
               "primary":false,
               "nullable":false,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"headofstate",
               "primary":false,
               "nullable":true,
-              "dbType":"text",
-              "hasSequences":false,
-              "character_octet_length":1073741824
+              "columnType":{
+                "dbType":"text"
+              },
+              "hasSequences":false
             },
             {
               "name":"capital",
               "primary":false,
               "nullable":true,
-              "dbType":"integer",
-              "hasSequences":false,
-              "numeric_precision":32,
-              "numeric_precision_radix":2,
-              "numeric_scale":0
+              "columnType":{
+                "dbType":"integer",
+                "numeric_precision":32,
+                "numeric_precision_radix":2,
+                "numeric_scale":0
+              },
+              "hasSequences":false
             },
             {
               "name":"code2",
               "primary":false,
               "nullable":false,
-              "dbType":"character",
-              "hasSequences":false,
-              "character_maximum_length":2,
-              "character_octet_length":8
+              "columnType":{
+                "dbType":"character",
+                "character_maximum_length":2
+              },
+              "hasSequences":false
             }
           ]
         },
@@ -466,10 +535,11 @@
           "name":"code",
           "primary":true,
           "nullable":false,
-          "dbType":"character",
-          "hasSequences":false,
-          "character_maximum_length":3,
-          "character_octet_length":12
+          "columnType":{
+            "dbType":"character",
+            "character_maximum_length":3
+          },
+          "hasSequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"

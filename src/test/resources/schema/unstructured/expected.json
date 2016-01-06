@@ -6,393 +6,505 @@
         "name":"field_1",
         "primary":false,
         "nullable":true,
-        "dbType":"smallint",
-        "hasSequences":false,
-        "numeric_precision":16,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"smallint",
+          "numeric_precision":16,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"field_2",
         "primary":false,
         "nullable":true,
-        "dbType":"integer",
-        "hasSequences":false,
-        "numeric_precision":32,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"integer",
+          "numeric_precision":32,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"field_3",
         "primary":false,
         "nullable":true,
-        "dbType":"bigint",
-        "hasSequences":false,
-        "numeric_precision":64,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "columnType":{
+          "dbType":"bigint",
+          "numeric_precision":64,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"field_4",
         "primary":false,
-        "nullable":true,
-        "dbType":"numeric",
-        "hasSequences":false,
-        "numeric_precision_radix":10
+        "nullable":false,
+        "columnType":{
+          "dbType":"smallint",
+          "numeric_precision":16,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":true,
+        "column_default":"nextval('t_random_fields_field_4_seq'::regclass)"
       },
       {
         "name":"field_5",
         "primary":false,
-        "nullable":true,
-        "dbType":"numeric",
-        "hasSequences":false,
-        "numeric_precision":10,
-        "numeric_precision_radix":10,
-        "numeric_scale":0
+        "nullable":false,
+        "columnType":{
+          "dbType":"integer",
+          "numeric_precision":32,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":true,
+        "column_default":"nextval('t_random_fields_field_5_seq'::regclass)"
       },
       {
         "name":"field_6",
         "primary":false,
-        "nullable":true,
-        "dbType":"numeric",
-        "hasSequences":false,
-        "numeric_precision":10,
-        "numeric_precision_radix":10,
-        "numeric_scale":2
+        "nullable":false,
+        "columnType":{
+          "dbType":"bigint",
+          "numeric_precision":64,
+          "numeric_precision_radix":2,
+          "numeric_scale":0
+        },
+        "hasSequences":true,
+        "column_default":"nextval('t_random_fields_field_6_seq'::regclass)"
       },
       {
         "name":"field_7",
         "primary":false,
         "nullable":true,
-        "dbType":"numeric",
-        "hasSequences":false,
-        "numeric_precision_radix":10
+        "columnType":{
+          "dbType":"numeric",
+          "numeric_precision_radix":10
+        },
+        "hasSequences":false
       },
       {
         "name":"field_8",
         "primary":false,
         "nullable":true,
-        "dbType":"real",
-        "hasSequences":false,
-        "numeric_precision":24,
-        "numeric_precision_radix":2
+        "columnType":{
+          "dbType":"numeric",
+          "numeric_precision":10,
+          "numeric_precision_radix":10,
+          "numeric_scale":0
+        },
+        "hasSequences":false
       },
       {
         "name":"field_9",
         "primary":false,
         "nullable":true,
-        "dbType":"double precision",
-        "hasSequences":false,
-        "numeric_precision":53,
-        "numeric_precision_radix":2
+        "columnType":{
+          "dbType":"numeric",
+          "numeric_precision":10,
+          "numeric_precision_radix":10,
+          "numeric_scale":2
+        },
+        "hasSequences":false
       },
       {
         "name":"field_10",
         "primary":false,
-        "nullable":false,
-        "dbType":"smallint",
-        "hasSequences":true,
-        "column_default":"nextval('t_random_fields_field_10_seq'::regclass)",
-        "numeric_precision":16,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "nullable":true,
+        "columnType":{
+          "dbType":"numeric",
+          "numeric_precision_radix":10
+        },
+        "hasSequences":false
       },
       {
         "name":"field_11",
         "primary":false,
-        "nullable":false,
-        "dbType":"integer",
-        "hasSequences":true,
-        "column_default":"nextval('t_random_fields_field_11_seq'::regclass)",
-        "numeric_precision":32,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "nullable":true,
+        "columnType":{
+          "dbType":"real",
+          "numeric_precision":24,
+          "numeric_precision_radix":2
+        },
+        "hasSequences":false
       },
       {
         "name":"field_12",
         "primary":false,
-        "nullable":false,
-        "dbType":"bigint",
-        "hasSequences":true,
-        "column_default":"nextval('t_random_fields_field_12_seq'::regclass)",
-        "numeric_precision":64,
-        "numeric_precision_radix":2,
-        "numeric_scale":0
+        "nullable":true,
+        "columnType":{
+          "dbType":"double precision",
+          "numeric_precision":53,
+          "numeric_precision_radix":2
+        },
+        "hasSequences":false
       },
       {
         "name":"field_13",
         "primary":false,
         "nullable":true,
-        "dbType":"character varying",
-        "hasSequences":false,
-        "character_maximum_length":10,
-        "character_octet_length":40
+        "columnType":{
+          "dbType":"character varying",
+          "character_maximum_length":10
+        },
+        "hasSequences":false
       },
       {
         "name":"field_14",
         "primary":false,
         "nullable":true,
-        "dbType":"character varying",
-        "hasSequences":false,
-        "character_maximum_length":10,
-        "character_octet_length":40
+        "columnType":{
+          "dbType":"character varying",
+          "character_maximum_length":10
+        },
+        "hasSequences":false
       },
       {
         "name":"field_15",
         "primary":false,
         "nullable":true,
-        "dbType":"character",
-        "hasSequences":false,
-        "character_maximum_length":10,
-        "character_octet_length":40
+        "columnType":{
+          "dbType":"character",
+          "character_maximum_length":10
+        },
+        "hasSequences":false
       },
       {
         "name":"field_16",
         "primary":false,
         "nullable":true,
-        "dbType":"character",
-        "hasSequences":false,
-        "character_maximum_length":10,
-        "character_octet_length":40
+        "columnType":{
+          "dbType":"character",
+          "character_maximum_length":10
+        },
+        "hasSequences":false
       },
       {
         "name":"field_17",
         "primary":false,
         "nullable":true,
-        "dbType":"text",
-        "hasSequences":false,
-        "character_octet_length":1073741824
+        "columnType":{
+          "dbType":"text"
+        },
+        "hasSequences":false
       },
       {
         "name":"field_18",
         "primary":false,
         "nullable":true,
-        "dbType":"character",
-        "hasSequences":false,
-        "character_maximum_length":1,
-        "character_octet_length":4
+        "columnType":{
+          "dbType":"character",
+          "character_maximum_length":1
+        },
+        "hasSequences":false
       },
       {
         "name":"field_19",
         "primary":false,
         "nullable":true,
-        "dbType":"money",
+        "columnType":{
+          "dbType":"money"
+        },
         "hasSequences":false
       },
       {
         "name":"field_20",
         "primary":false,
         "nullable":true,
-        "dbType":"bytea",
+        "columnType":{
+          "dbType":"bytea"
+        },
         "hasSequences":false
       },
       {
         "name":"field_21",
         "primary":false,
         "nullable":true,
-        "dbType":"timestamp without time zone",
-        "hasSequences":false,
-        "datetime_precision":6
+        "columnType":{
+          "dbType":"timestamp without time zone",
+          "datetime_precision":6
+        },
+        "hasSequences":false
       },
       {
         "name":"field_22",
         "primary":false,
         "nullable":true,
-        "dbType":"timestamp without time zone",
-        "hasSequences":false,
-        "datetime_precision":6
+        "columnType":{
+          "dbType":"timestamp without time zone",
+          "datetime_precision":6
+        },
+        "hasSequences":false
       },
       {
         "name":"field_23",
         "primary":false,
         "nullable":true,
-        "dbType":"date",
-        "hasSequences":false,
-        "datetime_precision":0
+        "columnType":{
+          "dbType":"timestamp with time zone",
+          "datetime_precision":6
+        },
+        "hasSequences":false
       },
       {
         "name":"field_24",
         "primary":false,
         "nullable":true,
-        "dbType":"time without time zone",
-        "hasSequences":false,
-        "datetime_precision":6
+        "columnType":{
+          "dbType":"date",
+          "datetime_precision":0
+        },
+        "hasSequences":false
       },
       {
         "name":"field_25",
         "primary":false,
         "nullable":true,
-        "dbType":"time without time zone",
-        "hasSequences":false,
-        "datetime_precision":6
+        "columnType":{
+          "dbType":"time without time zone",
+          "datetime_precision":6
+        },
+        "hasSequences":false
       },
       {
         "name":"field_26",
         "primary":false,
         "nullable":true,
-        "dbType":"interval",
-        "hasSequences":false,
-        "datetime_precision":6
+        "columnType":{
+          "dbType":"time without time zone",
+          "datetime_precision":6
+        },
+        "hasSequences":false
       },
       {
         "name":"field_27",
         "primary":false,
         "nullable":true,
-        "dbType":"boolean",
+        "columnType":{
+          "dbType":"time with time zone",
+          "datetime_precision":6
+        },
         "hasSequences":false
       },
       {
         "name":"field_28",
         "primary":false,
         "nullable":true,
-        "dbType":"USER-DEFINED",
+        "columnType":{
+          "dbType":"interval",
+          "datetime_precision":6
+        },
         "hasSequences":false
       },
       {
         "name":"field_29",
         "primary":false,
         "nullable":true,
-        "dbType":"point",
+        "columnType":{
+          "dbType":"boolean"
+        },
         "hasSequences":false
       },
       {
         "name":"field_30",
         "primary":false,
         "nullable":true,
-        "dbType":"line",
+        "columnType":{
+          "dbType":"USER-DEFINED"
+        },
         "hasSequences":false
       },
       {
         "name":"field_31",
         "primary":false,
         "nullable":true,
-        "dbType":"lseg",
+        "columnType":{
+          "dbType":"point"
+        },
         "hasSequences":false
       },
       {
         "name":"field_32",
         "primary":false,
         "nullable":true,
-        "dbType":"box",
+        "columnType":{
+          "dbType":"line"
+        },
         "hasSequences":false
       },
       {
         "name":"field_33",
         "primary":false,
         "nullable":true,
-        "dbType":"path",
+        "columnType":{
+          "dbType":"lseg"
+        },
         "hasSequences":false
       },
       {
         "name":"field_34",
         "primary":false,
         "nullable":true,
-        "dbType":"polygon",
+        "columnType":{
+          "dbType":"box"
+        },
         "hasSequences":false
       },
       {
         "name":"field_35",
         "primary":false,
         "nullable":true,
-        "dbType":"circle",
+        "columnType":{
+          "dbType":"path"
+        },
         "hasSequences":false
       },
       {
         "name":"field_36",
         "primary":false,
         "nullable":true,
-        "dbType":"cidr",
+        "columnType":{
+          "dbType":"polygon"
+        },
         "hasSequences":false
       },
       {
         "name":"field_37",
         "primary":false,
         "nullable":true,
-        "dbType":"inet",
+        "columnType":{
+          "dbType":"circle"
+        },
         "hasSequences":false
       },
       {
         "name":"field_38",
         "primary":false,
         "nullable":true,
-        "dbType":"macaddr",
+        "columnType":{
+          "dbType":"cidr"
+        },
         "hasSequences":false
       },
       {
         "name":"field_39",
         "primary":false,
         "nullable":true,
-        "dbType":"uuid",
+        "columnType":{
+          "dbType":"inet"
+        },
         "hasSequences":false
       },
       {
         "name":"field_40",
         "primary":false,
         "nullable":true,
-        "dbType":"xml",
+        "columnType":{
+          "dbType":"macaddr"
+        },
         "hasSequences":false
       },
       {
         "name":"field_41",
         "primary":false,
         "nullable":true,
-        "dbType":"json",
+        "columnType":{
+          "dbType":"uuid"
+        },
         "hasSequences":false
       },
       {
         "name":"field_42",
         "primary":false,
         "nullable":true,
-        "dbType":"ARRAY",
+        "columnType":{
+          "dbType":"xml"
+        },
         "hasSequences":false
       },
       {
         "name":"field_43",
         "primary":false,
         "nullable":true,
-        "dbType":"ARRAY",
+        "columnType":{
+          "dbType":"json"
+        },
         "hasSequences":false
       },
       {
         "name":"field_44",
         "primary":false,
         "nullable":true,
-        "dbType":"int4range",
+        "columnType":{
+          "dbType":"ARRAY"
+        },
         "hasSequences":false
       },
       {
         "name":"field_45",
         "primary":false,
         "nullable":true,
-        "dbType":"int8range",
+        "columnType":{
+          "dbType":"ARRAY"
+        },
         "hasSequences":false
       },
       {
         "name":"field_46",
         "primary":false,
         "nullable":true,
-        "dbType":"numrange",
+        "columnType":{
+          "dbType":"int4range"
+        },
         "hasSequences":false
       },
       {
         "name":"field_47",
         "primary":false,
         "nullable":true,
-        "dbType":"tsrange",
+        "columnType":{
+          "dbType":"int8range"
+        },
         "hasSequences":false
       },
       {
         "name":"field_48",
         "primary":false,
         "nullable":true,
-        "dbType":"tstzrange",
+        "columnType":{
+          "dbType":"numrange"
+        },
         "hasSequences":false
       },
       {
         "name":"field_49",
         "primary":false,
         "nullable":true,
-        "dbType":"daterange",
+        "columnType":{
+          "dbType":"tsrange"
+        },
+        "hasSequences":false
+      },
+      {
+        "name":"field_50",
+        "primary":false,
+        "nullable":true,
+        "columnType":{
+          "dbType":"tstzrange"
+        },
+        "hasSequences":false
+      },
+      {
+        "name":"field_51",
+        "primary":false,
+        "nullable":true,
+        "columnType":{
+          "dbType":"daterange"
+        },
         "hasSequences":false
       }
     ]
