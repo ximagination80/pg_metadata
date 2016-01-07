@@ -159,7 +159,7 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, logger: L
     }
 
     def indexSQL(table: String, unique: Boolean) = {
-      val flag = if (unique) "t" else "false"
+      val flag = if (unique) "t" else "f"
 
       s"""
       SELECT relname,cast(indkey as text)
