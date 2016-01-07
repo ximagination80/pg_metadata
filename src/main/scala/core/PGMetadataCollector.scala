@@ -373,7 +373,7 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, logger: L
       case "bytea" => PGByteArray(`type`)
       case "boolean" => PGBoolean(`type`)
       case "uuid" => PGUuid(`type`)
-      case _ => Other(`type`)
+      case _ => PGOther(`type`)
     }
   }
 

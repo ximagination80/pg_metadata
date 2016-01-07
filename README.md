@@ -4,30 +4,8 @@
 [![Join the chat at https://gitter.im/ximagination80/pg_metadata](https://badges.gitter.im/ximagination80/pg_metadata.svg)](https://gitter.im/ximagination80/pg_metadata?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 # Postgres metadata collector
-# How to run
+# Model
 
-```scala
-
---host localhost
---port 5432
---user postgres 
---password postgres
---database postgres
---schema public
---debug true
-
-```
-
-#Result:
-
-* Tables
-* Columns + limitations
-* ForeignKeys + cascade operations
-* Unique Indexes
-* Indexes
-* Constraints (check)
-
-#Model
 ```scala
 
 package core
@@ -50,15 +28,21 @@ sealed trait ColumnType {
   def dbType: String
 }
 
+sealed trait NumberLike extends ColumnType {
+  def numeric_precision: Option[Int]
+  def numeric_precision_radix: Option[Int]
+  def numeric_scale: Option[Int]
+}
+
 case class IntLike(dbType: String,
                    numeric_precision: Option[Int],
                    numeric_precision_radix: Option[Int],
-                   numeric_scale: Option[Int]) extends ColumnType
+                   numeric_scale: Option[Int]) extends NumberLike
 
 case class DoubleLike(dbType: String,
                       numeric_precision: Option[Int],
                       numeric_precision_radix: Option[Int],
-                      numeric_scale: Option[Int]) extends ColumnType
+                      numeric_scale: Option[Int]) extends NumberLike
 
 case class StringLike(dbType: String,
                       character_maximum_length: Option[Int]) extends ColumnType
@@ -69,7 +53,7 @@ case class TimeLike(dbType: String,
 case class PGUuid(dbType: String) extends ColumnType
 case class PGBoolean(dbType: String) extends ColumnType
 case class PGByteArray(dbType: String) extends ColumnType
-case class Other(dbType: String) extends ColumnType
+case class PGOther(dbType: String) extends ColumnType
 
 
 case class UniqueIndexDTO(name: String,
@@ -85,8 +69,6 @@ case class ForeignKeyDTO(name: String,
                          action_on_update: CascadeOp,
                          action_on_delete: CascadeOp)
 
-case class CheckDTO(name: String)
-
 sealed abstract class CascadeOp {
   def action: String
 }
@@ -95,6 +77,8 @@ case class SetDefault(action:String) extends CascadeOp
 case class SetNull(action:String) extends CascadeOp
 case class Restrict(action:String) extends CascadeOp
 case class Cascade(action:String) extends CascadeOp
+
+case class CheckDTO(name: String)
 
 ```
 
