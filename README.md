@@ -24,7 +24,7 @@ case class ColumnDTO(name: String,
                      column_default: Option[String])
 
 sealed trait ColumnType {
-  def db_type: String
+  def column_type: String
 }
 
 sealed trait NumberLike extends ColumnType {
