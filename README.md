@@ -7,25 +7,24 @@
 # Model
 
 ```scala
-
 package core
 
 case class TableDTO(name: String,
                     column: Seq[ColumnDTO],
-                    uniqueIndexes: Option[Seq[UniqueIndexDTO]],
+                    unique_indexes: Option[Seq[UniqueIndexDTO]],
                     indexes: Option[Seq[IndexDTO]],
-                    foreignKeys: Option[Seq[ForeignKeyDTO]],
+                    foreign_keys: Option[Seq[ForeignKeyDTO]],
                     checks: Option[Seq[CheckDTO]])
 
 case class ColumnDTO(name: String,
                      primary: Boolean,
                      nullable: Boolean,
-                     columnType: ColumnType,
-                     hasSequences: Boolean,
+                     column_type: ColumnType,
+                     has_sequences: Boolean,
                      column_default: Option[String])
 
 sealed trait ColumnType {
-  def dbType: String
+  def db_type: String
 }
 
 sealed trait NumberLike extends ColumnType {
@@ -34,26 +33,26 @@ sealed trait NumberLike extends ColumnType {
   def numeric_scale: Option[Int]
 }
 
-case class IntLike(dbType: String,
+case class IntLike(db_type: String,
                    numeric_precision: Option[Int],
                    numeric_precision_radix: Option[Int],
                    numeric_scale: Option[Int]) extends NumberLike
 
-case class DoubleLike(dbType: String,
+case class DoubleLike(db_type: String,
                       numeric_precision: Option[Int],
                       numeric_precision_radix: Option[Int],
                       numeric_scale: Option[Int]) extends NumberLike
 
-case class StringLike(dbType: String,
+case class StringLike(db_type: String,
                       character_maximum_length: Option[Int]) extends ColumnType
 
-case class TimeLike(dbType: String,
+case class TimeLike(db_type: String,
                     datetime_precision: Option[Int]) extends ColumnType
 
-case class PGUuid(dbType: String) extends ColumnType
-case class PGBoolean(dbType: String) extends ColumnType
-case class PGByteArray(dbType: String) extends ColumnType
-case class PGOther(dbType: String) extends ColumnType
+case class PGUuid(db_type: String) extends ColumnType
+case class PGBoolean(db_type: String) extends ColumnType
+case class PGByteArray(db_type: String) extends ColumnType
+case class PGOther(db_type: String) extends ColumnType
 
 
 case class UniqueIndexDTO(name: String,
@@ -79,7 +78,6 @@ case class Restrict(action:String) extends CascadeOp
 case class Cascade(action:String) extends CascadeOp
 
 case class CheckDTO(name: String)
-
 ```
 
 # Installation

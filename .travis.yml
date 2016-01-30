@@ -32,6 +32,7 @@ before_install:
   - pip install --user codecov
 
 addons:
+  postgresql: "9.3"
   postgresql: "9.4"
 
 script:

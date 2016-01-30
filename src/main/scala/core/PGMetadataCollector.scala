@@ -327,7 +327,7 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, logger: L
             primary = pks.exists(_.pk_name == c.column_name),
             nullable = c.is_nullable.toBoolean,
             getColumnType(c),
-            hasSequences = sequences.map(_.name).contains(s"${tn}_${c.column_name}_seq"),
+            has_sequences = sequences.map(_.name).contains(s"${tn}_${c.column_name}_seq"),
             c.column_default)
         })
 
@@ -405,7 +405,7 @@ case class PGMetadataCollector(schema: String)(implicit c: Connection, logger: L
         map(ch => CheckDTO(ch.constraint_name))
 
       e.copy(
-        foreignKeys = producedFk.sortBy(_.name).wrap,
+        foreign_keys = producedFk.sortBy(_.name).wrap,
         checks = producedChecks.sortBy(_.name).wrap
       )
     })

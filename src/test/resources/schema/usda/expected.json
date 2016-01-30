@@ -6,86 +6,86 @@
         "name":"datasrc_id",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":6
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"authors",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"title",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"year",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"integer",
+        "column_type":{
+          "column_type":"integer",
           "numeric_precision":32,
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"journal",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"vol_city",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"issue_state",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"start_page",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"end_page",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ]
   },
@@ -96,31 +96,31 @@
         "name":"ndb_no",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":5
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"nutr_no",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":3
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"datasrc_id",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":6
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ],
     "indexes":[
@@ -131,27 +131,27 @@
             "name":"datasrc_id",
             "primary":true,
             "nullable":false,
-            "columnType":{
-              "dbType":"character",
+            "column_type":{
+              "column_type":"character",
               "character_maximum_length":6
             },
-            "hasSequences":false
+            "has_sequences":false
           }
         ]
       }
     ],
-    "foreignKeys":[
+    "foreign_keys":[
       {
         "name":"datsrcln_datasrc_id_fkey",
         "column":{
           "name":"datasrc_id",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":6
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"data_src",
@@ -160,86 +160,86 @@
               "name":"datasrc_id",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":6
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"authors",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"title",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"year",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"journal",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"vol_city",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"issue_state",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"start_page",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"end_page",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ]
         },
@@ -247,11 +247,11 @@
           "name":"datasrc_id",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":6
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -266,11 +266,11 @@
           "name":"ndb_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"nut_data",
@@ -279,182 +279,182 @@
               "name":"ndb_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutr_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":3
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutr_val",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_data_pts",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"std_error",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"src_cd",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"deriv_cd",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"ref_ndb_no",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"add_nutr_mark",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_studies",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"min",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"max",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"df",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"low_eb",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"up_eb",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"stat_cmt",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"cc",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ],
           "indexes":[
@@ -465,10 +465,10 @@
                   "name":"deriv_cd",
                   "primary":false,
                   "nullable":true,
-                  "columnType":{
-                    "dbType":"text"
+                  "column_type":{
+                    "column_type":"text"
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             },
@@ -479,11 +479,11 @@
                   "name":"nutr_no",
                   "primary":true,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"character",
+                  "column_type":{
+                    "column_type":"character",
                     "character_maximum_length":3
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             },
@@ -494,13 +494,13 @@
                   "name":"src_cd",
                   "primary":false,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"integer",
+                  "column_type":{
+                    "column_type":"integer",
                     "numeric_precision":32,
                     "numeric_precision_radix":2,
                     "numeric_scale":0
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             }
@@ -510,11 +510,11 @@
           "name":"nutr_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":3
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -529,11 +529,11 @@
           "name":"ndb_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"nut_data",
@@ -542,182 +542,182 @@
               "name":"ndb_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutr_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":3
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutr_val",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_data_pts",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"std_error",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"src_cd",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"deriv_cd",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"ref_ndb_no",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"add_nutr_mark",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_studies",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"min",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"max",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"df",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"low_eb",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"up_eb",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"stat_cmt",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"cc",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ],
           "indexes":[
@@ -728,10 +728,10 @@
                   "name":"deriv_cd",
                   "primary":false,
                   "nullable":true,
-                  "columnType":{
-                    "dbType":"text"
+                  "column_type":{
+                    "column_type":"text"
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             },
@@ -742,11 +742,11 @@
                   "name":"nutr_no",
                   "primary":true,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"character",
+                  "column_type":{
+                    "column_type":"character",
                     "character_maximum_length":3
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             },
@@ -757,13 +757,13 @@
                   "name":"src_cd",
                   "primary":false,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"integer",
+                  "column_type":{
+                    "column_type":"integer",
                     "numeric_precision":32,
                     "numeric_precision_radix":2,
                     "numeric_scale":0
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             }
@@ -773,11 +773,11 @@
           "name":"ndb_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -792,11 +792,11 @@
           "name":"nutr_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":3
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"nut_data",
@@ -805,182 +805,182 @@
               "name":"ndb_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutr_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":3
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutr_val",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_data_pts",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"std_error",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"src_cd",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"deriv_cd",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"ref_ndb_no",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"add_nutr_mark",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_studies",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"min",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"max",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"df",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"low_eb",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"up_eb",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"stat_cmt",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"cc",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ],
           "indexes":[
@@ -991,10 +991,10 @@
                   "name":"deriv_cd",
                   "primary":false,
                   "nullable":true,
-                  "columnType":{
-                    "dbType":"text"
+                  "column_type":{
+                    "column_type":"text"
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             },
@@ -1005,11 +1005,11 @@
                   "name":"nutr_no",
                   "primary":true,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"character",
+                  "column_type":{
+                    "column_type":"character",
                     "character_maximum_length":3
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             },
@@ -1020,13 +1020,13 @@
                   "name":"src_cd",
                   "primary":false,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"integer",
+                  "column_type":{
+                    "column_type":"integer",
                     "numeric_precision":32,
                     "numeric_precision_radix":2,
                     "numeric_scale":0
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             }
@@ -1036,11 +1036,11 @@
           "name":"nutr_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":3
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -1055,11 +1055,11 @@
           "name":"nutr_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":3
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"nut_data",
@@ -1068,182 +1068,182 @@
               "name":"ndb_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutr_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":3
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutr_val",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_data_pts",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"std_error",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"src_cd",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"deriv_cd",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"ref_ndb_no",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"add_nutr_mark",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_studies",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"min",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"max",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"df",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"low_eb",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"up_eb",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"stat_cmt",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"cc",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ],
           "indexes":[
@@ -1254,10 +1254,10 @@
                   "name":"deriv_cd",
                   "primary":false,
                   "nullable":true,
-                  "columnType":{
-                    "dbType":"text"
+                  "column_type":{
+                    "column_type":"text"
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             },
@@ -1268,11 +1268,11 @@
                   "name":"nutr_no",
                   "primary":true,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"character",
+                  "column_type":{
+                    "column_type":"character",
                     "character_maximum_length":3
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             },
@@ -1283,13 +1283,13 @@
                   "name":"src_cd",
                   "primary":false,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"integer",
+                  "column_type":{
+                    "column_type":"integer",
                     "numeric_precision":32,
                     "numeric_precision_radix":2,
                     "numeric_scale":0
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             }
@@ -1299,11 +1299,11 @@
           "name":"ndb_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -1321,19 +1321,19 @@
         "name":"deriv_cd",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"derivcd_desc",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ]
   },
@@ -1344,20 +1344,20 @@
         "name":"fdgrp_cd",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":4
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"fddrp_desc",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ]
   },
@@ -1368,141 +1368,141 @@
         "name":"ndb_no",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":5
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"fdgrp_cd",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":4
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"long_desc",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"shrt_desc",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"comname",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"manufacname",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"survey",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":1
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"ref_desc",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"refuse",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"integer",
+        "column_type":{
+          "column_type":"integer",
           "numeric_precision":32,
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"sciname",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"n_factor",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"pro_factor",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"fat_factor",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"cho_factor",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ],
     "indexes":[
@@ -1513,27 +1513,27 @@
             "name":"fdgrp_cd",
             "primary":false,
             "nullable":false,
-            "columnType":{
-              "dbType":"character",
+            "column_type":{
+              "column_type":"character",
               "character_maximum_length":4
             },
-            "hasSequences":false
+            "has_sequences":false
           }
         ]
       }
     ],
-    "foreignKeys":[
+    "foreign_keys":[
       {
         "name":"food_des_fdgrp_cd_fkey",
         "column":{
           "name":"fdgrp_cd",
           "primary":false,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":4
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"fd_group",
@@ -1542,20 +1542,20 @@
               "name":"fdgrp_cd",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":4
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"fddrp_desc",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ]
         },
@@ -1563,11 +1563,11 @@
           "name":"fdgrp_cd",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":4
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -1585,50 +1585,50 @@
         "name":"ndb_no",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":5
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"footnt_no",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":4
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"footnt_typ",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":1
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"nutr_no",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":3
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"footnt_txt",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ],
     "indexes":[
@@ -1639,37 +1639,37 @@
             "name":"ndb_no",
             "primary":false,
             "nullable":false,
-            "columnType":{
-              "dbType":"character",
+            "column_type":{
+              "column_type":"character",
               "character_maximum_length":5
             },
-            "hasSequences":false
+            "has_sequences":false
           },
           {
             "name":"nutr_no",
             "primary":false,
             "nullable":true,
-            "columnType":{
-              "dbType":"character",
+            "column_type":{
+              "column_type":"character",
               "character_maximum_length":3
             },
-            "hasSequences":false
+            "has_sequences":false
           }
         ]
       }
     ],
-    "foreignKeys":[
+    "foreign_keys":[
       {
         "name":"footnote_ndb_no_fkey",
         "column":{
           "name":"ndb_no",
           "primary":false,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"food_des",
@@ -1678,141 +1678,141 @@
               "name":"ndb_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"fdgrp_cd",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":4
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"long_desc",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"shrt_desc",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"comname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"manufacname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"survey",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"ref_desc",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"refuse",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"sciname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"n_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"pro_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"fat_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"cho_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ],
           "indexes":[
@@ -1823,11 +1823,11 @@
                   "name":"fdgrp_cd",
                   "primary":false,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"character",
+                  "column_type":{
+                    "column_type":"character",
                     "character_maximum_length":4
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             }
@@ -1837,11 +1837,11 @@
           "name":"ndb_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -1856,11 +1856,11 @@
           "name":"nutr_no",
           "primary":false,
           "nullable":true,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":3
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"nutr_def",
@@ -1869,62 +1869,62 @@
               "name":"nutr_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":3
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"units",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"tagname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutrdesc",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_dec",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"smallint",
+              "column_type":{
+                "column_type":"smallint",
                 "numeric_precision":16,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"sr_order",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ]
         },
@@ -1932,11 +1932,11 @@
           "name":"nutr_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":3
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -1954,182 +1954,182 @@
         "name":"ndb_no",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":5
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"nutr_no",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":3
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"nutr_val",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"num_data_pts",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"std_error",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"src_cd",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"integer",
+        "column_type":{
+          "column_type":"integer",
           "numeric_precision":32,
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"deriv_cd",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"ref_ndb_no",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":5
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"add_nutr_mark",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":1
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"num_studies",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"integer",
+        "column_type":{
+          "column_type":"integer",
           "numeric_precision":32,
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"min",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"max",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"df",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"integer",
+        "column_type":{
+          "column_type":"integer",
           "numeric_precision":32,
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"low_eb",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"up_eb",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"stat_cmt",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"cc",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":1
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ],
     "indexes":[
@@ -2140,10 +2140,10 @@
             "name":"deriv_cd",
             "primary":false,
             "nullable":true,
-            "columnType":{
-              "dbType":"text"
+            "column_type":{
+              "column_type":"text"
             },
-            "hasSequences":false
+            "has_sequences":false
           }
         ]
       },
@@ -2154,11 +2154,11 @@
             "name":"nutr_no",
             "primary":true,
             "nullable":false,
-            "columnType":{
-              "dbType":"character",
+            "column_type":{
+              "column_type":"character",
               "character_maximum_length":3
             },
-            "hasSequences":false
+            "has_sequences":false
           }
         ]
       },
@@ -2169,28 +2169,28 @@
             "name":"src_cd",
             "primary":false,
             "nullable":false,
-            "columnType":{
-              "dbType":"integer",
+            "column_type":{
+              "column_type":"integer",
               "numeric_precision":32,
               "numeric_precision_radix":2,
               "numeric_scale":0
             },
-            "hasSequences":false
+            "has_sequences":false
           }
         ]
       }
     ],
-    "foreignKeys":[
+    "foreign_keys":[
       {
         "name":"nut_data_deriv_cd_fkey",
         "column":{
           "name":"deriv_cd",
           "primary":false,
           "nullable":true,
-          "columnType":{
-            "dbType":"text"
+          "column_type":{
+            "column_type":"text"
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"deriv_cd",
@@ -2199,19 +2199,19 @@
               "name":"deriv_cd",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"derivcd_desc",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ]
         },
@@ -2219,10 +2219,10 @@
           "name":"deriv_cd",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"text"
+          "column_type":{
+            "column_type":"text"
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -2237,11 +2237,11 @@
           "name":"ndb_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"food_des",
@@ -2250,141 +2250,141 @@
               "name":"ndb_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"fdgrp_cd",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":4
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"long_desc",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"shrt_desc",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"comname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"manufacname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"survey",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"ref_desc",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"refuse",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"sciname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"n_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"pro_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"fat_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"cho_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ],
           "indexes":[
@@ -2395,11 +2395,11 @@
                   "name":"fdgrp_cd",
                   "primary":false,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"character",
+                  "column_type":{
+                    "column_type":"character",
                     "character_maximum_length":4
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             }
@@ -2409,11 +2409,11 @@
           "name":"ndb_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -2428,11 +2428,11 @@
           "name":"nutr_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":3
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"nutr_def",
@@ -2441,62 +2441,62 @@
               "name":"nutr_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":3
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"units",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"tagname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"nutrdesc",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"num_dec",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"smallint",
+              "column_type":{
+                "column_type":"smallint",
                 "numeric_precision":16,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"sr_order",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ]
         },
@@ -2504,11 +2504,11 @@
           "name":"nutr_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":3
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -2523,13 +2523,13 @@
           "name":"src_cd",
           "primary":false,
           "nullable":false,
-          "columnType":{
-            "dbType":"integer",
+          "column_type":{
+            "column_type":"integer",
             "numeric_precision":32,
             "numeric_precision_radix":2,
             "numeric_scale":0
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"src_cd",
@@ -2538,22 +2538,22 @@
               "name":"src_cd",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"srccd_desc",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ]
         },
@@ -2561,13 +2561,13 @@
           "name":"src_cd",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"integer",
+          "column_type":{
+            "column_type":"integer",
             "numeric_precision":32,
             "numeric_precision_radix":2,
             "numeric_scale":0
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
@@ -2585,62 +2585,62 @@
         "name":"nutr_no",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":3
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"units",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"tagname",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"nutrdesc",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"num_dec",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"smallint",
+        "column_type":{
+          "column_type":"smallint",
           "numeric_precision":16,
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"sr_order",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"integer",
+        "column_type":{
+          "column_type":"integer",
           "numeric_precision":32,
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ]
   },
@@ -2651,22 +2651,22 @@
         "name":"src_cd",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"integer",
+        "column_type":{
+          "column_type":"integer",
           "numeric_precision":32,
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"srccd_desc",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ]
   },
@@ -2677,89 +2677,89 @@
         "name":"ndb_no",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":5
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"seq",
         "primary":true,
         "nullable":false,
-        "columnType":{
-          "dbType":"character",
+        "column_type":{
+          "column_type":"character",
           "character_maximum_length":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"amount",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"msre_desc",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"text"
+        "column_type":{
+          "column_type":"text"
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"gm_wgt",
         "primary":false,
         "nullable":false,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"num_data_pts",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"integer",
+        "column_type":{
+          "column_type":"integer",
           "numeric_precision":32,
           "numeric_precision_radix":2,
           "numeric_scale":0
         },
-        "hasSequences":false
+        "has_sequences":false
       },
       {
         "name":"std_dev",
         "primary":false,
         "nullable":true,
-        "columnType":{
-          "dbType":"double precision",
+        "column_type":{
+          "column_type":"double precision",
           "numeric_precision":53,
           "numeric_precision_radix":2
         },
-        "hasSequences":false
+        "has_sequences":false
       }
     ],
-    "foreignKeys":[
+    "foreign_keys":[
       {
         "name":"weight_ndb_no_fkey",
         "column":{
           "name":"ndb_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "references_to_table":{
           "name":"food_des",
@@ -2768,141 +2768,141 @@
               "name":"ndb_no",
               "primary":true,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":5
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"fdgrp_cd",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":4
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"long_desc",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"shrt_desc",
               "primary":false,
               "nullable":false,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"comname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"manufacname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"survey",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"character",
+              "column_type":{
+                "column_type":"character",
                 "character_maximum_length":1
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"ref_desc",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"refuse",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"integer",
+              "column_type":{
+                "column_type":"integer",
                 "numeric_precision":32,
                 "numeric_precision_radix":2,
                 "numeric_scale":0
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"sciname",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"text"
+              "column_type":{
+                "column_type":"text"
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"n_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"pro_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"fat_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             },
             {
               "name":"cho_factor",
               "primary":false,
               "nullable":true,
-              "columnType":{
-                "dbType":"double precision",
+              "column_type":{
+                "column_type":"double precision",
                 "numeric_precision":53,
                 "numeric_precision_radix":2
               },
-              "hasSequences":false
+              "has_sequences":false
             }
           ],
           "indexes":[
@@ -2913,11 +2913,11 @@
                   "name":"fdgrp_cd",
                   "primary":false,
                   "nullable":false,
-                  "columnType":{
-                    "dbType":"character",
+                  "column_type":{
+                    "column_type":"character",
                     "character_maximum_length":4
                   },
-                  "hasSequences":false
+                  "has_sequences":false
                 }
               ]
             }
@@ -2927,11 +2927,11 @@
           "name":"ndb_no",
           "primary":true,
           "nullable":false,
-          "columnType":{
-            "dbType":"character",
+          "column_type":{
+            "column_type":"character",
             "character_maximum_length":5
           },
-          "hasSequences":false
+          "has_sequences":false
         },
         "action_on_update":{
           "action":"NO ACTION"
