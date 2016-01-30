@@ -32,11 +32,7 @@ before_install:
   - pip install --user codecov
 
 addons:
-  postgresql:
-     - "9.1"
-     - "9.2"
-     - "9.3"
-     - "9.4"
+  postgresql: "9.3"
 
 script:
   - sbt ++$TRAVIS_SCALA_VERSION clean coverage test
