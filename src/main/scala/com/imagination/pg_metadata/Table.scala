@@ -1,4 +1,4 @@
-package core
+package com.imagination.pg_metadata
 
 case class TableDTO(name: String,
                     column: Seq[ColumnDTO],

@@ -1,4 +1,4 @@
-package core
+package com.imagination.pg_metadata
 
 import java.sql.Connection
 

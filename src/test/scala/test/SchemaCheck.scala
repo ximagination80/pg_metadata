@@ -1,11 +1,11 @@
 package test
 
-import comparator._
-import core.PGMetadataCollector
+import com.imagination.pg_metadata.PGMetadataCollector
 import net.liftweb.json.DefaultFormats
 import net.liftweb.json.Extraction._
 import net.liftweb.json.JsonAST._
 import org.flywaydb.core.Flyway
+import org.imagination.comparator._
 import org.scalatest.{BeforeAndAfterAll, FunSuite}
 
 class SchemaCheck extends FunSuite
