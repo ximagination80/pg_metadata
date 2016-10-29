@@ -15,7 +15,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" % "scalatest_2.11" % "2.2.4" % "test",
   "org.flywaydb" % "flyway-core" % "3.2.1" % "test",
   "net.liftweb" %% "lift-json" % "3.0-M7" % "test",
-  "org.imagination" % "comparator_2.11" % "1.0" % "test",
+  "org.imagination" % "comparator_2.11" % "1.1" % "test",
   "commons-io" % "commons-io" % "2.4" % "test")
 
 resolvers ++= Seq(
